@@ -56,6 +56,7 @@ class ShortTermMemory(BaseMemory):
         self.access_times: Dict[str, float] = {}
         self.creation_times: Dict[str, float] = {}
         self.lru_queue: List[tuple] = []  # Priority queue for LRU eviction
+        self.memory = deque()  # FIFO storage for recent items
         
         if capacity < 100:
             logger.warning(f"Seeker O1 short-term memory capacity of {capacity} is quite small. Performance may suffer.")

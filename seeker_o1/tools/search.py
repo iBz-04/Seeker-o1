@@ -124,10 +124,9 @@ class SearchTool(BaseTool):
             }
             
             if comment:
-                result_dict["comment"] = comment
-                logging.info(f"ANUS search added a cheeky comment: {comment}")
+                result_dict['comment'] = comment
             
-            return ToolResult.success(self.name, result_dict, comment=comment)
+            return ToolResult.success(self.name, result_dict)
             
         except Exception as e:
             error_msg = str(e)

@@ -17,7 +17,7 @@ class ToolResult:
         tool_name: str,
         status: str = "success",
         result: Any = None,
-        error: Optional[str] = None,
+        error_message: Optional[str] = None,
         metadata: Optional[Dict[str, Any]] = None
     ):
         """
@@ -27,13 +27,13 @@ class ToolResult:
             tool_name: Name of the tool that produced the result.
             status: Status of the tool execution ("success" or "error").
             result: The actual result data.
-            error: Error message if status is "error".
+            error_message: Error message if status is "error".
             metadata: Additional metadata about the execution.
         """
         self.tool_name = tool_name
         self.status = status
         self.result = result
-        self.error = error
+        self.error_message = error_message
         self.metadata = metadata or {}
         
         # Add timestamp
@@ -56,7 +56,7 @@ class ToolResult:
         if self.status == "success":
             result_dict["result"] = self.result
         elif self.status == "error":
-            result_dict["error"] = self.error
+            result_dict["error"] = self.error_message
         
         return result_dict
     
@@ -76,19 +76,19 @@ class ToolResult:
         return cls(tool_name=tool_name, status="success", result=result, metadata=metadata)
     
     @classmethod
-    def error(cls, tool_name: str, error: str, metadata: Optional[Dict[str, Any]] = None) -> 'ToolResult':
+    def error(cls, tool_name: str, error_message: str, metadata: Optional[Dict[str, Any]] = None) -> 'ToolResult':
         """
         Create an error result.
         
         Args:
             tool_name: Name of the tool.
-            error: The error message.
+            error_message: The error message.
             metadata: Additional metadata.
             
         Returns:
             A ToolResult instance with error status.
         """
-        return cls(tool_name=tool_name, status="error", error=error, metadata=metadata)
+        return cls(tool_name=tool_name, status="error", error_message=error_message, metadata=metadata)
     
     def is_success(self) -> bool:
         """

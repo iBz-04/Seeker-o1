@@ -73,6 +73,7 @@ class CLI(cmd.Cmd):
             level=log_level,
             format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         )
+        self.console = Console()
     
     def display_welcome(self) -> None:
         """
