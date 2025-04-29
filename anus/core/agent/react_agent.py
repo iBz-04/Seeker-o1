@@ -119,7 +119,7 @@ class ReactAgent(BaseAgent):
         """
         # This should be implemented using a language model
         # Currently using a placeholder
-        return "dummy_action", {"query": f"Placeholder action for {context['task']}"}
+        return "text", {"text": context['task'], "operation": "process"}
     
     def _execute_action(self, action_name: str, action_input: Dict[str, Any]) -> Dict[str, Any]:
         """

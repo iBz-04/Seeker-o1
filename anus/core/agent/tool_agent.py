@@ -70,7 +70,7 @@ class ToolAgent(ReactAgent):
             
         except (ImportError, AttributeError, Exception) as e:
             self.log_action("load_tool", {"tool_name": tool_name, "status": "error", "error": str(e)})
-            logging.error(f"Failed to load tool {tool_name}: {e}")
+            logging.debug(f"Failed to load tool {tool_name}: {e}")
             return False
     
     def _decide_action(self, context: Dict[str, Any]) -> Tuple[str, Dict[str, Any]]:
@@ -109,18 +109,19 @@ class ToolAgent(ReactAgent):
                 
         # Check for text processing tasks
         text_patterns = {
-            r'count\s+characters\s+in\s+[\'"](.+)[\'"]': ("count", lambda m: m.group(1)),
-            r'count\s+words\s+in\s+[\'"](.+)[\'"]': ("wordcount", lambda m: m.group(1)),
-            r'reverse\s+[\'"](.+)[\'"]': ("reverse", lambda m: m.group(1)),
-            r'uppercase\s+[\'"](.+)[\'"]': ("uppercase", lambda m: m.group(1)),
-            r'lowercase\s+[\'"](.+)[\'"]': ("lowercase", lambda m: m.group(1)),
-            r'capitalize\s+[\'"](.+)[\'"]': ("capitalize", lambda m: m.group(1))
+            r'count\s+characters\s+in\s+[\'"](.+)[\'"]': ("count", None),
+            r'count\s+words\s+in\s+[\'"](.+)[\'"]': ("wordcount", None),
+            r'reverse\s+[\'"](.+)[\'"]': ("reverse", None),
+            r'uppercase\s+[\'"](.+)[\'"]': ("uppercase", None),
+            r'lowercase\s+[\'"](.+)[\'"]': ("lowercase", None),
+            r'capitalize\s+[\'"](.+)[\'"]': ("capitalize", None)
         }
         
         for pattern, (operation, extractor) in text_patterns.items():
             text_match = re.search(pattern, task, re.IGNORECASE)
             if text_match and 'text' in self.tools:
-                text = extractor(text_match)
+                # Use the matched text directly from group 1
+                text = text_match.group(1)
                 return "text", {"text": text, "operation": operation}
                 
         # Check for code execution tasks
