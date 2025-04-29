@@ -1,10 +1,9 @@
-# ANUS Configuration File
 
 model:
   provider: openai
   name: gpt-4o
-  max_tokens: 1500  # Limit token output to reduce rate limit issues
-  api_key: "${OPENAI_API_KEY}"  # Uses the environment variable you set
+  max_tokens: 1500 
+  api_key: "${OPENAI_API_KEY}"  
 
 agent:
   name: anus
