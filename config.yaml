@@ -1,4 +1,3 @@
-
 model:
   provider: openai
   name: gpt-4o
@@ -6,7 +5,7 @@ model:
   api_key: "${OPENAI_API_KEY}"  
 
 agent:
-  name: anus
+  name: seeker-o1
   mode: multi
   max_iterations: 10
   memory_capacity: 2000
@@ -21,4 +20,4 @@ tools:
 
 logging:
   level: DEBUG
-  file: logs/anus.log 
+  file: logs/seeker-o1.log 

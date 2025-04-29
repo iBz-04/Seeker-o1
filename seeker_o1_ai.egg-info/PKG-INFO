@@ -1,3 +1,59 @@
+Metadata-Version: 2.4
+Name: seeker-o1-ai
+Version: 0.1.0
+Summary: An open-source AI agent framework for task automation
+Home-page: https://github.com/seeker-o1/seeker-o1
+Author: Seeker-o1 Team
+Author-email: seeker-o1@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: anthropic>=0.5.0
+Requires-Dist: langchain>=0.0.267
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: typer>=0.9.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: tqdm>=4.66.0
+Requires-Dist: playwright>=1.40.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: aiohttp>=3.8.5
+Requires-Dist: pypdf>=3.15.0
+Requires-Dist: python-docx>=0.8.11
+Requires-Dist: openpyxl>=3.1.2
+Requires-Dist: pillow>=10.0.0
+Requires-Dist: jupyter-client>=8.3.0
+Requires-Dist: nbformat>=5.9.0
+Requires-Dist: pytest>=7.4.0
+Requires-Dist: pytest-cov>=4.1.0
+Requires-Dist: black>=23.7.0
+Requires-Dist: isort>=5.12.0
+Requires-Dist: flake8>=6.1.0
+Requires-Dist: mypy>=1.5.0
+Requires-Dist: fastapi>=0.103.0
+Requires-Dist: uvicorn>=0.23.0
+Requires-Dist: streamlit>=1.26.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
 # 🔍 Seeker-o1: Strategic Exploration and Knowledge Extraction Research - Omnidirectional v1
 
 <p align="center">

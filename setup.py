@@ -7,14 +7,14 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read().splitlines()
 
 setup(
-    name="anus-ai",
+    name="seeker-o1-ai",
     version="0.1.0",
-    author="Anus AI Team",
-    author_email="anus-ai@example.com",
+    author="Seeker-o1 Team",
+    author_email="seeker-o1@example.com",
     description="An open-source AI agent framework for task automation",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/anus-ai/anus",
+    url="https://github.com/seeker-o1/seeker-o1",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -29,7 +29,7 @@ setup(
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "anus=anus.main:main",
+            "seeker-o1=seeker_o1.main:main",
         ],
     },
 )

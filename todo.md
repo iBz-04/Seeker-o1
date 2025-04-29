@@ -1,4 +1,4 @@
-# Anus AI Project Todo List
+# Seeker-o1 Project Todo List
 
 ## Research Phase
 - [x] Research open-source AI agents
