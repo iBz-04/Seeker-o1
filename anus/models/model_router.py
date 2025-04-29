@@ -31,7 +31,7 @@ class ModelRouter:
         }
         self.default_model_config = default_model_config or {
             "provider": "openai",
-            "model_name": "gpt-4",
+            "model_name": "gpt-4o",
             "temperature": 0.0
         }
         self.default_model = None
@@ -143,6 +143,10 @@ class ModelRouter:
             kwargs = config.copy()
             kwargs.pop("provider", None)
             
+            # Map 'name' to 'model_name' for backward compatibility
+            if "name" in kwargs and "model_name" not in kwargs:
+                kwargs["model_name"] = kwargs.pop("name")
+            
             # Create the model
             return model_class(**kwargs)
             
@@ -151,7 +155,7 @@ class ModelRouter:
             
             # Fallback to OpenAI with minimal config
             try:
-                return OpenAIModel(model_name="gpt-4")
+                return OpenAIModel(model_name="gpt-4o")
             except Exception:
                 raise ValueError(f"Failed to create model: {e}")
     

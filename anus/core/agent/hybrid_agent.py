@@ -114,6 +114,15 @@ class HybridAgent(ToolAgent):
         Returns:
             A dictionary containing the execution result and metadata.
         """
+        mode_override = kwargs.get("mode")
+        if mode_override == "single":
+            logging.info("Forced single-agent mode by override.")
+            model = ModelRouter().get_default_model()
+            answer = model.generate(task)
+            return {"task": task, "answer": answer, "mode": "single"}
+        if mode_override == "multi":
+            logging.info("Forced multi-agent mode by override.")
+            return self._execute_multi_agent(task, **kwargs)
         complexity = self._assess_complexity(task)
         
         # Decide on mode based on complexity
@@ -167,23 +176,32 @@ class HybridAgent(ToolAgent):
             f"Analyze and gather information for: {task}"
         )
         results["researcher"] = researcher_result
+        researcher_summary = researcher_result.get("answer", "")
+        if len(researcher_summary) > 2000:  # If output is very long
+            researcher_summary = researcher_summary[:1000] + "...[content omitted for brevity]..." + researcher_summary[-500:]
         
         # Planner creates a strategy based on research
         planner_result = self.specialized_agents["planner"].execute(
-            f"Plan execution strategy for: {task}\nBased on research: {researcher_result}"
+            f"Plan execution strategy for: {task}\nBased on research: {researcher_summary}"
         )
         results["planner"] = planner_result
+        planner_summary = planner_result.get("answer", "")
+        if len(planner_summary) > 2000:  # If output is very long
+            planner_summary = planner_summary[:1000] + "...[content omitted for brevity]..." + planner_summary[-500:]
         
         # Executor carries out the plan
         executor_result = self.specialized_agents["executor"].execute(
-            f"Execute plan for: {task}\nFollowing strategy: {planner_result}"
+            f"Execute plan for: {task}\nFollowing strategy: {planner_summary}"
         )
         results["executor"] = executor_result
         final_result = executor_result  # Use executor's result as the primary result
+        executor_summary = executor_result.get("answer", "")
+        if len(executor_summary) > 2000:  # If output is very long
+            executor_summary = executor_summary[:1000] + "...[content omitted for brevity]..." + executor_summary[-500:]
         
         # Critic evaluates the results
         critic_result = self.specialized_agents["critic"].execute(
-            f"Evaluate results for: {task}\nAnalyzing output: {executor_result}"
+            f"Evaluate results for: {task}\nAnalyzing output: {executor_summary}"
         )
         results["critic"] = critic_result
         

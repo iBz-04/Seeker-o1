@@ -227,12 +227,10 @@ class AgentOrchestrator:
                     "index_in_memory": True
                 }
             },
-            "models": {
-                "default": {
-                    "provider": "openai",
-                    "model": "gpt-4",
-                    "temperature": 0.0
-                }
+            "model": {
+                "provider": "openai",
+                "name": "gpt-4o",
+                "temperature": 0.0
             },
             "tools": {
                 "enabled": []
