@@ -9,12 +9,12 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="seeker-o1-ai",
     version="0.1.0",
-    author="Seeker-o1 Team",
-    author_email="seeker-o1@example.com",
-    description="An open-source AI agent framework for task automation",
+    author="Ibrahim Rayamah",
+    author_email="ibz04.dev@gmail.com",
+    description="An upgrade of seeker, with a python implementation and multi-agent support",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/seeker-o1/seeker-o1",
+    url="https://github.com/iBz-0/seeker-o1",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
