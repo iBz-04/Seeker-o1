@@ -1,7 +1,7 @@
 # Table of Contents
 
 - [Introduction](#-introduction)
-- [Why Anus?](#-why-anus)
+- [Why Seeker-o1?](#-why-seeker-o1)
 - [Features & Capabilities](#-features--capabilities)
 - [Installation](#-installation)
 - [Quick Start](#-quick-start)

@@ -1,15 +1,15 @@
 # API Reference
 
-This document provides a comprehensive reference for the Anus AI API.
+This document provides a comprehensive reference for the seeker-o1 AI API.
 
 ## Core Components
 
 ### Agent
 
-The `Agent` class is the primary interface for interacting with the Anus AI system.
+The `Agent` class is the primary interface for interacting with the seeker-o1 AI system.
 
 ```python
-from anus import Agent
+from seeker-o1 import Agent
 
 agent = Agent(
     model="gpt-4o",
@@ -85,7 +85,7 @@ agent.load_memory("memory.json")
 The `Society` class enables multi-agent collaboration.
 
 ```python
-from anus import Society, Agent
+from seeker-o1 import Society, Agent
 
 researcher = Agent(role="researcher")
 analyst = Agent(role="analyst")
@@ -147,10 +147,10 @@ society.remove_agent(agent_id)
 
 ### Config
 
-The `Config` class provides configuration options for the Anus AI system.
+The `Config` class provides configuration options for the seeker-o1 AI system.
 
 ```python
-from anus import Config
+from seeker-o1 import Config
 
 config = Config(
     llm={
@@ -182,7 +182,7 @@ config = Config(
 ### SearchTool
 
 ```python
-from anus.tools import SearchTool
+from seeker-o1.tools import SearchTool
 
 search_tool = SearchTool(
     engine="google",
@@ -198,7 +198,7 @@ search_tool = SearchTool(
 ### BrowserTool
 
 ```python
-from anus.tools import BrowserTool
+from seeker-o1.tools import BrowserTool
 
 browser_tool = BrowserTool(
     headless=True,
@@ -214,7 +214,7 @@ browser_tool = BrowserTool(
 ### DocumentTool
 
 ```python
-from anus.tools import DocumentTool
+from seeker-o1.tools import DocumentTool
 
 document_tool = DocumentTool(
     supported_formats=["pdf", "docx", "xlsx"]
@@ -228,7 +228,7 @@ document_tool = DocumentTool(
 ### CodeTool
 
 ```python
-from anus.tools import CodeTool
+from seeker-o1.tools import CodeTool
 
 code_tool = CodeTool(
     sandbox=True,
@@ -243,14 +243,14 @@ code_tool = CodeTool(
 
 ## Command-Line Interface
 
-The Anus AI CLI provides a command-line interface for interacting with the system.
+The seeker-o1 AI CLI provides a command-line interface for interacting with the system.
 
 ### Commands
 
 #### run
 
 ```bash
-anus run "Find the latest news about artificial intelligence"
+seeker-o1 run "Find the latest news about artificial intelligence"
 ```
 
 **Options:**
@@ -262,7 +262,7 @@ anus run "Find the latest news about artificial intelligence"
 #### interactive
 
 ```bash
-anus interactive
+seeker-o1 interactive
 ```
 
 **Options:**
@@ -273,7 +273,7 @@ anus interactive
 #### init
 
 ```bash
-anus init
+seeker-o1 init
 ```
 
 **Options:**
@@ -283,18 +283,18 @@ anus init
 #### version
 
 ```bash
-anus version
+seeker-o1 version
 ```
 
-Displays the current version of Anus AI.
+Displays the current version of seeker-o1 AI.
 
 ## Error Handling
 
-Anus AI provides a comprehensive error handling system.
+seeker-o1 AI provides a comprehensive error handling system.
 
-### AnusError
+### seeker-o1Error
 
-Base class for all Anus AI errors.
+Base class for all seeker-o1 AI errors.
 
 ### ConfigError
 
@@ -317,7 +317,7 @@ Raised when there is an issue with the memory system.
 ### Basic Usage
 
 ```python
-from anus import Agent
+from seeker-o1 import Agent
 
 agent = Agent()
 response = agent.run("What is the capital of France?")
@@ -327,7 +327,7 @@ print(response)
 ### Multi-Agent Collaboration
 
 ```python
-from anus import Society, Agent
+from seeker-o1 import Society, Agent
 
 researcher = Agent(role="researcher")
 analyst = Agent(role="analyst")
@@ -341,7 +341,7 @@ print(response)
 ### Custom Configuration
 
 ```python
-from anus import Agent, Config
+from seeker-o1 import Agent, Config
 
 config = Config(
     llm={

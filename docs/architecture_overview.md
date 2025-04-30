@@ -1,14 +1,14 @@
 # Architecture Overview
 
-This document provides a detailed overview of the Anus AI architecture, explaining how the different components work together to create a powerful and flexible AI agent system.
+This document provides a detailed overview of the seeker-o1 AI architecture, explaining how the different components work together to create a powerful and flexible AI agent system.
 
 ## System Architecture
 
-Anus AI is built on a modular architecture that allows for flexibility, extensibility, and robustness. The system is composed of several key components that work together to provide a comprehensive AI agent framework.
+seeker-o1 AI is built on a modular architecture that allows for flexibility, extensibility, and robustness. The system is composed of several key components that work together to provide a comprehensive AI agent framework.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         Anus AI System                          │
+│                         seeker-o1 AI System                          │
 │                                                                 │
 │  ┌─────────────┐   ┌─────────────┐   ┌─────────────────────┐   │
 │  │ Core Engine │   │ Agent System│   │   Tool Ecosystem    │   │
@@ -29,7 +29,7 @@ Anus AI is built on a modular architecture that allows for flexibility, extensib
 
 ### Core Engine
 
-The Core Engine is the heart of the Anus AI system, responsible for orchestrating the various components and managing the overall flow of information and control.
+The Core Engine is the heart of the seeker-o1 AI system, responsible for orchestrating the various components and managing the overall flow of information and control.
 
 #### Components
 
@@ -46,7 +46,7 @@ The Core Engine is the heart of the Anus AI system, responsible for orchestratin
 
 ### Agent System
 
-The Agent System provides the intelligence and decision-making capabilities of the Anus AI framework.
+The Agent System provides the intelligence and decision-making capabilities of the seeker-o1 AI framework.
 
 #### Components
 
@@ -100,12 +100,12 @@ The Model Integration layer provides the connection to various language models a
 
 ### User Interface
 
-The User Interface layer provides the means for users to interact with the Anus AI system.
+The User Interface layer provides the means for users to interact with the seeker-o1 AI system.
 
 #### Components
 
-- **CLI**: Command-line interface for interacting with the Anus AI agent.
-- **Web Interface**: Optional web-based user interface for the Anus AI agent.
+- **CLI**: Command-line interface for interacting with the seeker-o1 AI agent.
+- **Web Interface**: Optional web-based user interface for the seeker-o1 AI agent.
 - **API**: RESTful API for integration with external systems.
 
 #### Key Features
@@ -116,7 +116,7 @@ The User Interface layer provides the means for users to interact with the Anus 
 
 ## Data Flow
 
-The following diagram illustrates the flow of data through the Anus AI system:
+The following diagram illustrates the flow of data through the seeker-o1 AI system:
 
 ```
 ┌──────────┐     ┌───────────────┐     ┌─────────────┐
@@ -146,7 +146,7 @@ The following diagram illustrates the flow of data through the Anus AI system:
 
 ### Programming Language and Dependencies
 
-Anus AI is implemented in Python 3.11+, leveraging the following key dependencies:
+seeker-o1 AI is implemented in Python 3.11+, leveraging the following key dependencies:
 
 - **LangChain**: For building and connecting language model applications
 - **Pydantic**: For data validation and settings management
@@ -159,7 +159,7 @@ Anus AI is implemented in Python 3.11+, leveraging the following key dependencie
 The codebase is organized into modules corresponding to the architectural components:
 
 ```
-anus/
+seeker-o1/
 ├── core/
 │   ├── orchestrator.py
 │   ├── planner.py
@@ -191,7 +191,7 @@ anus/
 
 ### Configuration System
 
-Anus AI uses a flexible configuration system based on YAML files:
+seeker-o1 AI uses a flexible configuration system based on YAML files:
 
 ```yaml
 llm:
@@ -214,14 +214,14 @@ tools:
 
 logging:
   level: info
-  file: anus.log
+  file: seeker-o1.log
 ```
 
 Environment variables can be used for sensitive information like API keys.
 
 ## Security Considerations
 
-Anus AI is designed with security in mind:
+seeker-o1 AI is designed with security in mind:
 
 - **Sandboxed Execution**: Code execution is performed in a sandboxed environment.
 - **API Key Management**: Sensitive information is handled securely.
@@ -230,7 +230,7 @@ Anus AI is designed with security in mind:
 
 ## Performance Optimization
 
-Anus AI includes several performance optimizations:
+seeker-o1 AI includes several performance optimizations:
 
 - **Caching**: Results are cached to avoid redundant API calls.
 - **Batching**: Requests are batched when possible to reduce API calls.
@@ -239,7 +239,7 @@ Anus AI includes several performance optimizations:
 
 ## Extensibility
 
-Anus AI is designed to be easily extended:
+seeker-o1 AI is designed to be easily extended:
 
 - **Plugin System**: Custom plugins can be developed to extend functionality.
 - **Custom Tools**: New tools can be created by implementing the base tool interface.
@@ -248,7 +248,7 @@ Anus AI is designed to be easily extended:
 
 ## Future Directions
 
-The Anus AI architecture is designed to evolve over time. Future directions include:
+The seeker-o1 AI architecture is designed to evolve over time. Future directions include:
 
 - **Enhanced Multi-Agent Collaboration**: More sophisticated agent interaction patterns.
 - **Improved Tool Ecosystem**: Additional specialized tools for domain-specific tasks.
@@ -258,4 +258,4 @@ The Anus AI architecture is designed to evolve over time. Future directions incl
 
 ## Conclusion
 
-The Anus AI architecture provides a flexible, extensible, and powerful framework for building AI agent systems. By combining a modular design with a comprehensive tool ecosystem and support for multiple models, Anus AI enables a wide range of applications from simple task automation to complex multi-agent collaborations.
+The seeker-o1 AI architecture provides a flexible, extensible, and powerful framework for building AI agent systems. By combining a modular design with a comprehensive tool ecosystem and support for multiple models, seeker-o1 AI enables a wide range of applications from simple task automation to complex multi-agent collaborations.

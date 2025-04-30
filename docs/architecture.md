@@ -1,7 +1,7 @@
-# Anus AI Agent Architecture
+# seeker-o1 
 
-## Overview
-Anus (Autonomous Networked Utility System) is an open-source AI agent framework designed to provide accessible, powerful, and flexible AI assistance for a wide range of tasks. Inspired by OpenManus and OWL, Anus combines the simplicity and accessibility of OpenManus with the multi-agent collaboration capabilities of OWL to create a unique and effective AI agent system.
+seeker-o1  is an open-source AI agent framework designed to provide accessible, powerful, and flexible AI assistance for a wide range of tasks. 
+
 
 ## Core Philosophy
 - **Accessibility**: No barriers to entry, completely open-source with minimal setup requirements
@@ -200,7 +200,7 @@ Anus (Autonomous Networked Utility System) is an open-source AI agent framework 
 - Implement feedback mechanisms
 - Regular release cycle and versioning
 
-## Unique Features of Anus AI
+## Unique Features of seeker-o1 AI
 
 1. **Hybrid Agent Architecture**: Combines the simplicity of single-agent systems with the power of multi-agent collaboration.
 
@@ -220,7 +220,7 @@ Anus (Autonomous Networked Utility System) is an open-source AI agent framework 
 
 ## Comparison with Existing Systems
 
-| Feature | Anus | OpenManus | OWL |
+| Feature | seeker-o1 | OpenManus | OWL |
 |---------|------|-----------|-----|
 | Multi-Agent Support | ✅ | ❌ | ✅ |
 | Open-Source Models | ✅ | ✅ | ✅ |
@@ -244,4 +244,4 @@ Anus (Autonomous Networked Utility System) is an open-source AI agent framework 
 
 ## Conclusion
 
-The Anus AI agent architecture combines the best aspects of OpenManus and OWL while introducing unique features that address limitations in both systems. By focusing on accessibility, flexibility, and community involvement, Anus aims to become a leading open-source AI agent framework that can be used for a wide range of applications, from simple task automation to complex multi-agent collaborations.
+The seeker-o1 AI agent architecture combines the best aspects of OpenManus and OWL while introducing unique features that address limitations in both systems. By focusing on accessibility, flexibility, and community involvement, seeker-o1 aims to become a leading open-source AI agent framework that can be used for a wide range of applications, from simple task automation to complex multi-agent collaborations.

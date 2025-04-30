@@ -1,12 +1,12 @@
-# ANUS Implementation Roadmap
+# seeker-o1 Implementation Roadmap
 
-This roadmap outlines a structured approach to implementing the ANUS framework by adapting valuable concepts from OpenManus. The plan is organized into phases with specific deliverables and milestones to ensure steady progress.
+This roadmap outlines a structured approach to implementing the seeker-o1 framework by adapting valuable concepts from OpenManus. The plan is organized into phases with specific deliverables and milestones to ensure steady progress.
 
 ## Phase 1: Foundation (Weeks 1-2)
 
 ### Week 1: Project Setup and Core Architecture
 - **Days 1-2: Project Structure**
-  - Set up repository structure following ANUS directory layout
+  - Set up repository structure following seeker-o1 directory layout
   - Configure development environment and dependencies
   - Implement basic package structure and imports
   - Set up testing framework
@@ -116,11 +116,11 @@ This roadmap outlines a structured approach to implementing the ANUS framework b
 
 ## Implementation Priorities
 
-1. **Core Agent System**: The foundation of ANUS, enabling basic task execution
+1. **Core Agent System**: The foundation of seeker-o1, enabling basic task execution
 2. **Tool Integration**: Essential for agent capabilities and task execution
 3. **Planning System**: Critical for breaking down complex tasks
 4. **Memory System**: Important for context retention and learning
-5. **Multi-Agent Collaboration**: Key differentiator for ANUS
+5. **Multi-Agent Collaboration**: Key differentiator for seeker-o1
 6. **User Interfaces**: Necessary for usability and adoption
 
 ## Key Technical Challenges
@@ -133,11 +133,11 @@ This roadmap outlines a structured approach to implementing the ANUS framework b
 
 ## Integration Strategy
 
-The integration strategy focuses on adapting OpenManus concepts while maintaining ANUS's unique identity:
+The integration strategy focuses on adapting OpenManus concepts while maintaining seeker-o1's unique identity:
 
-1. **Preserve Directory Structure**: Maintain ANUS's existing directory layout
-2. **Adapt Core Classes**: Reinterpret OpenManus classes to fit ANUS architecture
-3. **Enhance with New Features**: Add ANUS-specific features not present in OpenManus
+1. **Preserve Directory Structure**: Maintain seeker-o1's existing directory layout
+2. **Adapt Core Classes**: Reinterpret OpenManus classes to fit seeker-o1 architecture
+3. **Enhance with New Features**: Add seeker-o1-specific features not present in OpenManus
 4. **Maintain Consistent Style**: Ensure code style and patterns are consistent
 5. **Progressive Enhancement**: Build core functionality first, then add advanced features
 
@@ -153,7 +153,7 @@ The integration strategy focuses on adapting OpenManus concepts while maintainin
 
 1. **API Reference**: Comprehensive documentation of all classes and methods
 2. **Architecture Guide**: Overview of system design and components
-3. **User Guide**: Instructions for using ANUS
+3. **User Guide**: Instructions for using seeker-o1
 4. **Developer Guide**: Information for contributors
 5. **Examples**: Sample applications and use cases
 

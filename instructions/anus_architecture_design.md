@@ -1,15 +1,13 @@
-# ANUS Architecture Design Based on OpenManus Concepts
-
 ## Overview
 
-This document outlines a proposed architecture for the ANUS (Autonomous Networked Utility System) framework, thoughtfully adapting valuable concepts from OpenManus while enhancing them to fulfill ANUS's unique vision. The design maintains ANUS's intended structure while incorporating OpenManus's proven architectural patterns.
+This document outlines a proposed architecture for the seeker-o1 (Autonomous Networked Utility System) framework, thoughtfully adapting valuable concepts from OpenManus while enhancing them to fulfill seeker-o1's unique vision. The design maintains seeker-o1's intended structure while incorporating OpenManus's proven architectural patterns.
 
 ## Core Architecture
 
 ### Agent System
 
 ```
-anus/
+seeker-o1/
 ├── core/
 │   ├── agent/
 │   │   ├── base_agent.py       # Abstract foundation with core functionality
@@ -24,14 +22,14 @@ anus/
 ```
 
 #### Key Enhancements:
-1. **HybridAgent**: Extends OpenManus's agent hierarchy with the ability to dynamically switch between single-agent and multi-agent modes based on task complexity
+1. **HybridAgent**: ability to dynamically switch between single-agent and multi-agent modes based on task complexity
 2. **Enhanced Memory System**: Expands OpenManus's basic memory with short-term and long-term memory components
 3. **Orchestrator**: New component for coordinating multiple agents, not present in OpenManus
 
 ### Planning System
 
 ```
-anus/
+seeker-o1/
 ├── core/
 │   ├── planning/
 │   │   ├── base_planner.py     # Abstract planner interface
@@ -53,7 +51,7 @@ anus/
 ### Tool System
 
 ```
-anus/
+seeker-o1/
 ├── tools/
 │   ├── base/
 │   │   ├── tool.py             # Abstract tool foundation
@@ -85,7 +83,7 @@ anus/
 ### Model Integration
 
 ```
-anus/
+seeker-o1/
 ├── models/
 │   ├── base_model.py           # Abstract model interface
 │   ├── openai_model.py         # OpenAI API integration
@@ -102,7 +100,7 @@ anus/
 ### User Interface
 
 ```
-anus/
+seeker-o1/
 ├── ui/
 │   ├── cli.py                  # Command-line interface
 │   ├── web/                    # Web interface components
@@ -115,7 +113,7 @@ anus/
 #### Key Enhancements:
 1. **Multiple Interfaces**: Expands beyond OpenManus's CLI to include web and API interfaces
 2. **Interactive Mode**: Adds support for interactive conversations and task monitoring
-3. **API Integration**: Enables embedding ANUS in other applications
+3. **API Integration**: Enables embedding seeker-o1 in other applications
 
 ## Integration Points
 
@@ -145,7 +143,7 @@ class ToolConfig(BaseModel):
     # Other tool configurations
     
 class AgentConfig(BaseModel):
-    name: str = "anus"
+    name: str = "seeker-o1"
     mode: str = "single"  # "single", "multi"
     model: ModelConfig = Field(default_factory=ModelConfig)
     memory: MemoryConfig = Field(default_factory=MemoryConfig)
@@ -158,11 +156,11 @@ class AgentConfig(BaseModel):
 ```python
 # orchestrator.py
 from typing import Dict, List, Optional
-from anus.core.agent.base_agent import BaseAgent
-from anus.core.agent.hybrid_agent import HybridAgent
-from anus.core.flow.base_flow import BaseFlow
-from anus.core.flow.planning_flow import PlanningFlow
-from anus.core.flow.consensus_flow import ConsensusFlow
+from seeker-o1.core.agent.base_agent import BaseAgent
+from seeker-o1.core.agent.hybrid_agent import HybridAgent
+from seeker-o1.core.flow.base_flow import BaseFlow
+from seeker-o1.core.flow.planning_flow import PlanningFlow
+from seeker-o1.core.flow.consensus_flow import ConsensusFlow
 
 class AgentOrchestrator:
     """Coordinates multiple agents and manages execution flows"""
@@ -206,7 +204,7 @@ class AgentOrchestrator:
 ```python
 # tool_registry.py
 from typing import Dict, Type
-from anus.tools.base.tool import BaseTool
+from seeker-o1.tools.base.tool import BaseTool
 
 class ToolRegistry:
     """Registry for tool discovery and instantiation"""
@@ -252,8 +250,8 @@ class BrowserTool(BaseTool):
 ```python
 # hybrid_agent.py
 from typing import Dict, List, Optional
-from anus.core.agent.tool_agent import ToolAgent
-from anus.core.memory.base_memory import BaseMemory
+from seeker-o1.core.agent.tool_agent import ToolAgent
+from seeker-o1.core.memory.base_memory import BaseMemory
 
 class HybridAgent(ToolAgent):
     """
@@ -298,8 +296,8 @@ class HybridAgent(ToolAgent):
 ```python
 # consensus_flow.py
 from typing import Dict, List, Optional
-from anus.core.agent.base_agent import BaseAgent
-from anus.core.flow.base_flow import BaseFlow
+from seeker-o1.core.agent.base_agent import BaseAgent
+from seeker-o1.core.flow.base_flow import BaseFlow
 
 class ConsensusFlow(BaseFlow):
     """
@@ -348,7 +346,7 @@ class ConsensusFlow(BaseFlow):
 ```python
 # resource_planner.py
 from typing import Dict, List, Optional
-from anus.core.planning.base_planner import BasePlanner
+from seeker-o1.core.planning.base_planner import BasePlanner
 
 class ResourcePlanner(BasePlanner):
     """

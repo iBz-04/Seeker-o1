@@ -24,9 +24,10 @@
 
 ## 🌟 Introduction
 
-**Seeker-o1** (Strategic Exploration and Knowledge Extraction Research - Omnidirectional v1) is a powerful, flexible, and accessible open-source AI agent framework designed to revolutionize task automation. Built with modern AI technologies and best practices, Seeker-o1 represents the next generation of AI agent frameworks, offering unparalleled capabilities and ease of use.
+**Seeker-o1**  is a powerful, flexible, and accessible open-source AI agent framework designed to revolutionize task automation. It is also an upgrade  and re-implementation of  [@Seeker](https://github.com/iBz-04/Seeker)
 
 Seeker-o1 empowers users to create AI agents that can:
+
 - Execute tasks through natural language instructions
 - Process text inputs
 - Perform basic calculations
@@ -68,7 +69,6 @@ Whether you're a developer looking to build AI-powered applications, a researche
 
 - **OpenAI API Support**: Seamless integration with GPT models
 
-## 🔧 Installation
 
 Seeker-o1 supports multiple installation methods to accommodate different user preferences and environments.
 
@@ -78,11 +78,11 @@ Seeker-o1 supports multiple installation methods to accommodate different user p
 - pip (Python package installer)
 - Git
 
-### Method 1: From Source (Recommended for Developers)
+### Installation:
 
 ```bash
 # Clone the repository
-git clone https://github.com/nikmcfly/Seeker-o1.git
+git clone https://github.com/iBz-04/Seeker-o1.git
 cd Seeker-o1
 
 # Create and activate a virtual environment

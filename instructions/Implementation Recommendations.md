@@ -1,25 +1,25 @@
-# Implementation Recommendations for ANUS
+# Implementation Recommendations for seeker-o1
 
-This document provides specific implementation recommendations for adapting valuable concepts from OpenManus into the ANUS framework. These recommendations focus on practical implementation details while respecting and enhancing ANUS's current structure.
+This document provides specific implementation recommendations for adapting valuable concepts from OpenManus into the seeker-o1 framework. These recommendations focus on practical implementation details while respecting and enhancing seeker-o1's current structure.
 
 ## Core Agent System
 
 ### BaseAgent Implementation
 
 ```python
-# anus/core/agent/base_agent.py
+# seeker-o1/core/agent/base_agent.py
 
 from abc import ABC, abstractmethod
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
-from anus.models.base_model import BaseModel as LLMModel
-from anus.core.memory.base_memory import BaseMemory
-from anus.core.schema import AgentState, Message
+from seeker-o1.models.base_model import BaseModel as LLMModel
+from seeker-o1.core.memory.base_memory import BaseMemory
+from seeker-o1.core.schema import AgentState, Message
 
 class BaseAgent(BaseModel, ABC):
     """
-    Abstract base class for all ANUS agents.
+    Abstract base class for all seeker-o1 agents.
     Provides foundational functionality for state management, memory, and execution.
     """
     # Core attributes
@@ -83,14 +83,14 @@ class BaseAgent(BaseModel, ABC):
 ### ToolAgent Implementation
 
 ```python
-# anus/core/agent/tool_agent.py
+# seeker-o1/core/agent/tool_agent.py
 
 from typing import Dict, List, Optional
 from pydantic import Field
 
-from anus.core.agent.base_agent import BaseAgent
-from anus.core.schema import Message, ToolCall
-from anus.tools.base.tool_collection import ToolCollection
+from seeker-o1.core.agent.base_agent import BaseAgent
+from seeker-o1.core.schema import Message, ToolCall
+from seeker-o1.tools.base.tool_collection import ToolCollection
 
 class ToolAgent(BaseAgent):
     """
@@ -182,13 +182,13 @@ class ToolAgent(BaseAgent):
 ### HybridAgent Implementation
 
 ```python
-# anus/core/agent/hybrid_agent.py
+# seeker-o1/core/agent/hybrid_agent.py
 
 from typing import Dict, List, Optional
 from pydantic import Field
 
-from anus.core.agent.tool_agent import ToolAgent
-from anus.core.flow.consensus_flow import ConsensusFlow
+from seeker-o1.core.agent.tool_agent import ToolAgent
+from seeker-o1.core.flow.consensus_flow import ConsensusFlow
 
 class HybridAgent(ToolAgent):
     """
@@ -304,15 +304,15 @@ class HybridAgent(ToolAgent):
 ### PlanningTool Implementation
 
 ```python
-# anus/tools/planning/planning_tool.py
+# seeker-o1/tools/planning/planning_tool.py
 
 from typing import Dict, List, Optional
 import time
 import json
 from pydantic import Field
 
-from anus.tools.base.tool import BaseTool
-from anus.tools.base.tool_result import ToolResult
+from seeker-o1.tools.base.tool import BaseTool
+from seeker-o1.tools.base.tool_result import ToolResult
 
 class PlanningTool(BaseTool):
     """
@@ -424,16 +424,16 @@ class PlanningTool(BaseTool):
 ### PlanningFlow Implementation
 
 ```python
-# anus/core/flow/planning_flow.py
+# seeker-o1/core/flow/planning_flow.py
 
 from typing import Dict, List, Optional, Tuple, Union
 import time
 from pydantic import Field
 
-from anus.core.agent.base_agent import BaseAgent
-from anus.core.flow.base_flow import BaseFlow
-from anus.models.base_model import BaseModel as LLMModel
-from anus.tools.planning.planning_tool import PlanningTool
+from seeker-o1.core.agent.base_agent import BaseAgent
+from seeker-o1.core.flow.base_flow import BaseFlow
+from seeker-o1.models.base_model import BaseModel as LLMModel
+from seeker-o1.tools.planning.planning_tool import PlanningTool
 
 class PlanningFlow(BaseFlow):
     """
@@ -507,7 +507,7 @@ class PlanningFlow(BaseFlow):
 ### BaseTool Implementation
 
 ```python
-# anus/tools/base/tool.py
+# seeker-o1/tools/base/tool.py
 
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional
@@ -515,7 +515,7 @@ from pydantic import BaseModel, Field
 
 class BaseTool(ABC, BaseModel):
     """
-    Abstract base class for all tools in the ANUS framework.
+    Abstract base class for all tools in the seeker-o1 framework.
     Provides foundation for tool definition, parameter specification, and execution.
     """
     name: str
@@ -555,11 +555,11 @@ class BaseTool(ABC, BaseModel):
 ### ToolCollection Implementation
 
 ```python
-# anus/tools/base/tool_collection.py
+# seeker-o1/tools/base/tool_collection.py
 
 from typing import Any, Dict, List, Optional
-from anus.tools.base.tool import BaseTool
-from anus.tools.base.tool_result import ToolResult, ToolFailure
+from seeker-o1.tools.base.tool import BaseTool
+from seeker-o1.tools.base.tool_result import ToolResult, ToolFailure
 
 class ToolCollection:
     """
@@ -609,14 +609,14 @@ class ToolCollection:
 ### BrowserTool Implementation
 
 ```python
-# anus/tools/web/browser_tool.py
+# seeker-o1/tools/web/browser_tool.py
 
 from typing import Dict, Optional
 import asyncio
 from pydantic import Field
 
-from anus.tools.base.tool import BaseTool
-from anus.tools.base.tool_result import ToolResult, ToolFailure
+from seeker-o1.tools.base.tool import BaseTool
+from seeker-o1.tools.base.tool_result import ToolResult, ToolFailure
 
 class BrowserTool(BaseTool):
     """
@@ -726,7 +726,7 @@ class BrowserTool(BaseTool):
 ### BaseModel Implementation
 
 ```python
-# anus/models/base_model.py
+# seeker-o1/models/base_model.py
 
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional, Union
@@ -792,14 +792,14 @@ class BaseModel(PydanticBaseModel, ABC):
 ### OpenAIModel Implementation
 
 ```python
-# anus/models/openai_model.py
+# seeker-o1/models/openai_model.py
 
 from typing import Dict, List, Optional, Union
 import json
 import os
 from pydantic import Field
 
-from anus.models.base_model import BaseModel, Message, ModelResponse, ToolCall
+from seeker-o1.models.base_model import BaseModel, Message, ModelResponse, ToolCall
 
 class OpenAIModel(BaseModel):
     """
@@ -936,7 +936,7 @@ class OpenAIModel(BaseModel):
 ### BaseMemory Implementation
 
 ```python
-# anus/core/memory/base_memory.py
+# seeker-o1/core/memory/base_memory.py
 
 from typing import Dict, List, Optional
 from pydantic import BaseModel, Field
@@ -999,14 +999,14 @@ class BaseMemory(BaseModel):
 ### HybridMemory Implementation
 
 ```python
-# anus/core/memory/hybrid_memory.py
+# seeker-o1/core/memory/hybrid_memory.py
 
 from typing import Dict, List, Optional
 import json
 import os
 from pydantic import Field
 
-from anus.core.memory.base_memory import BaseMemory, Message
+from seeker-o1.core.memory.base_memory import BaseMemory, Message
 
 class HybridMemory(BaseMemory):
     """
@@ -1024,7 +1024,7 @@ class HybridMemory(BaseMemory):
         
         # Set default storage path if not provided
         if self.persistence and not self.storage_path:
-            self.storage_path = os.path.expanduser("~/.anus/memory")
+            self.storage_path = os.path.expanduser("~/.seeker-o1/memory")
         
         # Load persistent memory if enabled
         if self.persistence:
@@ -1109,7 +1109,7 @@ class HybridMemory(BaseMemory):
 ### Main Entry Point
 
 ```python
-# anus/main.py
+# seeker-o1/main.py
 
 import argparse
 import asyncio
@@ -1117,14 +1117,14 @@ import os
 import sys
 from typing import Dict, Optional
 
-from anus.core.agent.hybrid_agent import HybridAgent
-from anus.core.config import AgentConfig
-from anus.ui.cli import CLI
+from seeker-o1.core.agent.hybrid_agent import HybridAgent
+from seeker-o1.core.config import AgentConfig
+from seeker-o1.ui.cli import CLI
 
 async def main():
-    """Main entry point for the ANUS framework"""
+    """Main entry point for the seeker-o1 framework"""
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description="ANUS - Autonomous Networked Utility System")
+    parser = argparse.ArgumentParser(description="seeker-o1 - Autonomous Networked Utility System")
     parser.add_argument("--config", type=str, default="config.yaml", help="Path to configuration file")
     parser.add_argument("--mode", type=str, default="single", choices=["single", "multi"], help="Agent mode")
     parser.add_argument("--task", type=str, help="Task description")
@@ -1187,7 +1187,7 @@ if __name__ == "__main__":
 ### Configuration System
 
 ```python
-# anus/core/config.py
+# seeker-o1/core/config.py
 
 from typing import Dict, Optional
 import os
@@ -1217,7 +1217,7 @@ class ToolConfig(BaseModel):
 
 class AgentConfig(BaseModel):
     """Configuration for agents"""
-    name: str = "anus"
+    name: str = "seeker-o1"
     mode: str = "single"  # "single", "multi"
     model: ModelConfig = Field(default_factory=ModelConfig)
     memory: MemoryConfig = Field(default_factory=MemoryConfig)
