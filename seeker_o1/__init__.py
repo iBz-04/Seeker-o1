@@ -1,9 +1,9 @@
 """
-Seeker-o1 - Strategic Exploration and Knowledge Extraction Research - Omnidirectional v1
+Seeker-o1 - Ai agent system
 Package initialization
 """
 
 __version__ = "0.1.0"
-__author__ = "Seeker-o1 Team"
-__email__ = "seeker-o1@example.com"
-__description__ = "An open-source AI agent framework for task automation"
+__author__ = "Ibrahim Rayamah"
+__email__ = "ibz04.dev@gmail.com"
+__description__ = "Command line ai agent system with enhanced memory"
