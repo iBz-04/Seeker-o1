@@ -1,5 +1,5 @@
 """
-Memory module for the ANUS framework.
+Memory module for the seeker-o1 framework.
 
 This module contains various memory implementations:
 - BaseMemory: Abstract base class for all memory systems

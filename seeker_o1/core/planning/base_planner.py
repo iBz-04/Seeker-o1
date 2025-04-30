@@ -7,7 +7,7 @@ from typing import Dict, List, Any, Optional
 
 class BasePlanner(ABC):
     """
-    Abstract base class for planners in the ANUS framework.
+    Abstract base class for planners in the seeker-o1 framework.
     
     Provides the core functionality for breaking down tasks into steps.
     """

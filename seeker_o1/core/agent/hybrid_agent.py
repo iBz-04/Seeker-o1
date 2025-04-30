@@ -129,14 +129,14 @@ class HybridAgent(ToolAgent):
         
         # Decide on mode based on complexity
         if complexity < 3.0:
-            logging.info(f"Task complexity ({complexity:.1f}) below threshold (3.0). ANUS staying tight in single-agent mode.")
-            logging.info("This task is so simple even a constipated ANUS could handle it.")
+            logging.info(f"Task complexity ({complexity:.1f}) below threshold (3.0). SEEKER-O1 staying tight in single-agent mode.")
+            logging.info("This task is so simple even a constipated SEEKER-O1 could handle it.")
             model = ModelRouter().get_default_model()
             answer = model.generate(task)
             return {"task": task, "answer": answer, "mode": "single"}
         else:
-            logging.info(f"Task complexity ({complexity:.1f}) above threshold (3.0). ANUS expanding to multi-agent mode.")
-            logging.info("ANUS is expanding to accommodate multiple agents for this complex task.")
+            logging.info(f"Task complexity ({complexity:.1f}) above threshold (3.0). SEEKER-O1 expanding to multi-agent mode.")
+            logging.info("SEEKER-O1 is expanding to accommodate multiple agents for this complex task.")
             return self._execute_multi_agent(task, **kwargs)
     
     def _execute_multi_agent(self, task: str, **kwargs) -> Dict[str, Any]:

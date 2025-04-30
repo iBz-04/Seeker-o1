@@ -1,6 +1,6 @@
-# Anus Models Module
+# Seeker-o1 Models Module
 
-This module contains the model integration components of the Anus AI framework, including:
+This module contains the model integration components of the Seeker-o1 AI framework, including:
 
 - OpenAI API Support
 - Open-Source Model Support

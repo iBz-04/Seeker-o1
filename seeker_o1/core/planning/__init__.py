@@ -1,5 +1,5 @@
 """
-Planning module for the ANUS framework.
+Planning module for the seeker-o1 framework.
 
 This module contains classes for task planning:
 - BasePlanner: Abstract base class for planners

@@ -7,7 +7,7 @@ from typing import Dict, List, Any, Optional, Union
 
 class BaseMemory(ABC):
     """
-    Abstract base class for memory systems in the ANUS framework.
+    Abstract base class for memory systems in the seeker-o1 framework.
     
     Provides the core functionality and interface that all memory types must implement.
     """

@@ -1,5 +1,5 @@
 """
-Models module for the ANUS framework.
+Models module for the seeker-o1 framework.
 
 This module contains language model implementations and utilities:
 - BaseModel: Abstract base class for all language models

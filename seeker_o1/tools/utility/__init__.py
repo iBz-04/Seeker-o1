@@ -1,5 +1,5 @@
 """
-Utility tools for the ANUS framework.
+Utility tools for the seeker-o1 framework.
 
 This module contains basic utility tools:
 - CalculatorTool: Tool for performing basic arithmetic calculations

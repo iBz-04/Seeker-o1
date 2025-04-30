@@ -1,6 +1,6 @@
-# Anus Core Module
+# Seeker-o1 Core Module
 
-This module contains the core functionality of the Anus AI agent system, including:
+This module contains the core functionality of the Seeker-o1 AI agent system, including:
 
 - Agent Orchestration System
 - Task Planning and Execution Framework

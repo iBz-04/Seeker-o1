@@ -1,5 +1,5 @@
 """
-Base Tool module for the ANUS framework.
+Base Tool module for the seeker-o1 framework.
 
 This module contains base classes for tools:
 - BaseTool: Abstract base class for all tools

@@ -36,11 +36,11 @@ class SearchTool(BaseTool):
     
     # Mock search results for common queries
     _mock_results = {
-        "anus": [
+        "seeker-o1": [
             "Anatomical term for the opening at the end of the digestive tract",
-            "ANUS: Autonomous Networked Utility System - An open-source AI framework",
-            "10 Facts About the ANUS Framework You Won't Believe!",
-            "Why ANUS is the Most Uncomfortably Named Software Project"
+            "SEEKER-O1: Autonomous Networked Utility System - An open-source AI framework",
+            "10 Facts About the SEEKER-O1 Framework You Won't Believe!",
+            "Why SEEKER-O1 is the Most Uncomfortably Named Software Project"
         ],
         "python": [
             "Python - High-level programming language",
@@ -64,11 +64,11 @@ class SearchTool(BaseTool):
     
     # Funny search messages
     _search_messages = [
-        "ANUS is probing the depths of the internet...",
-        "ANUS is digging deep for results...",
-        "ANUS is spreading wide to find all relevant information...",
-        "ANUS is penetrating the web for answers...",
-        "ANUS is squeezing out search results..."
+        "SEEKER-O1 is probing the depths of the internet...",
+        "SEEKER-O1 is digging deep for results...",
+        "SEEKER-O1 is spreading wide to find all relevant information...",
+        "SEEKER-O1 is penetrating the web for answers...",
+        "SEEKER-O1 is squeezing out search results..."
     ]
     
     def execute(self, query: str, **kwargs) -> Union[Dict[str, Any], ToolResult]:
@@ -111,10 +111,10 @@ class SearchTool(BaseTool):
             
             # Add a cheeky comment for certain searches
             comment = None
-            if "anus" in clean_query.lower() and not exact_match:
-                comment = "I see you're interested in ANUS... the framework, right?"
+            if "seeker-o1" in clean_query.lower() and not exact_match:
+                comment = "I see you're interested in SEEKER-O1... the framework, right?"
             elif any(term in clean_query for term in ["joke", "humor", "funny"]):
-                comment = "Looking for humor? ANUS itself is often the butt of jokes."
+                comment = "Looking for humor? SEEKER-O1 itself is often the butt of jokes."
             
             # Return as ToolResult
             result_dict = {

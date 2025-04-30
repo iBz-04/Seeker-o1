@@ -1,6 +1,6 @@
-# Anus Agents Module
+# Seeker-o1 Agents Module
 
-This module contains the agent system components of the Anus AI framework, including:
+This module contains the agent system components of the Seeker-o1 AI framework, including:
 
 - Single-Agent Mode
 - Multi-Agent Collaboration Mode

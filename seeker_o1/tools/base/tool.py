@@ -7,7 +7,7 @@ from typing import Dict, List, Any, Optional, Union
 
 class BaseTool(ABC):
     """
-    Abstract base class for all tools in the ANUS framework.
+    Abstract base class for all tools in the seeker-o1 framework.
     
     Provides the core functionality and interface that all tool types must implement.
     """

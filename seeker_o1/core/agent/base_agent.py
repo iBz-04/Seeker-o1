@@ -9,7 +9,7 @@ import time
 
 class BaseAgent(ABC):
     """
-    Abstract base class for all agents in the ANUS framework.
+    Abstract base class for all agents in the SEEKER-O1 framework.
     
     Provides the core functionality and interface that all agent types must implement.
     """

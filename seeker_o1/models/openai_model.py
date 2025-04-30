@@ -1,5 +1,5 @@
 """
-OpenAI Model implementation for the ANUS framework.
+OpenAI Model implementation for the seeker-o1 framework.
 """
 
 from typing import Dict, List, Any, Optional, Union, Callable

@@ -1,5 +1,5 @@
 """
-Agent module for the ANUS framework.
+Agent module for the seeker-o1 framework.
 
 This module contains various agent implementations:
 - BaseAgent: Abstract base class for all agents

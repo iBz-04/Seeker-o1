@@ -1,5 +1,5 @@
 """
-Tools module for the ANUS framework.
+Tools module for the seeker-o1 framework.
 
 This module contains various tools that can be used by agents to interact with 
 the environment and perform tasks.

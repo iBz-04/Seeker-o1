@@ -18,7 +18,7 @@ class CodeTool(BaseTool):
     """
     A tool for executing Python code in a restricted environment.
     
-    ANUS can execute your code, but keep it clean - no backdoor operations allowed!
+    SEEKER-O1 can execute your code, but keep it clean - no backdoor operations allowed!
     """
     
     name = "code"
@@ -57,11 +57,11 @@ class CodeTool(BaseTool):
     
     # Funny code execution messages
     _execution_messages = [
-        "ANUS is squeezing your code through its tight security filters...",
-        "ANUS is processing your code carefully - no backdoor entry allowed!",
-        "ANUS is executing your code - hope it doesn't cause any irritation!",
-        "ANUS is carefully handling your code to prevent any leakage...",
-        "ANUS is processing your code - tight security, clean output!"
+        "SEEKER-O1 is squeezing your code through its tight security filters...",
+        "SEEKER-O1 is processing your code carefully - no backdoor entry allowed!",
+        "SEEKER-O1 is executing your code - hope it doesn't cause any irritation!",
+        "SEEKER-O1 is carefully handling your code to prevent any leakage...",
+        "SEEKER-O1 is processing your code - tight security, clean output!"
     ]
     
     def execute(self, code: str, **kwargs) -> Union[Dict[str, Any], ToolResult]:
@@ -131,9 +131,9 @@ class CodeTool(BaseTool):
             
             # Add some humor to certain errors
             if "forbidden" in error_msg.lower():
-                error_msg = f"{error_msg} ANUS has strict boundaries, you know!"
+                error_msg = f"{error_msg} SEEKER-O1 has strict boundaries, you know!"
             elif "syntax" in error_msg.lower():
-                error_msg = f"{error_msg} Your code caused ANUS some discomfort."
+                error_msg = f"{error_msg} Your code caused SEEKER-O1 some discomfort."
                 
             return {"status": "error", "error": f"Code execution error: {error_msg}"}
     

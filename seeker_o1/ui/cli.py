@@ -38,7 +38,7 @@ class CLI(cmd.Cmd):
     prompt = "seeker_o1> "
     
     # Easter egg jokes for random display
-    _anus_jokes = [
+    _seeker_o1_jokes = [
         "Seeker-o1: Because 'Autonomous Networked Utility System' sounds better in meetings.",
         "Seeker-o1: The backend system that handles all your crap.",
         "Seeker-o1: Boldly going where no framework has gone before.",
@@ -86,7 +86,7 @@ class CLI(cmd.Cmd):
         print("=" * term_width)
         print("Seeker-o1 - Autonomous Networked Utility System".center(term_width))
         print("=" * term_width)
-        print(random.choice(self._anus_jokes).center(term_width))
+        print(random.choice(self._seeker_o1_jokes).center(term_width))
         print("=" * term_width)
         print("Type 'help' or '?' to list available commands.".center(term_width))
         print("=" * term_width)
@@ -162,7 +162,7 @@ class CLI(cmd.Cmd):
         # Occasionally show a joke after results
         self.joke_counter += 1
         if self.joke_counter % 3 == 0:  # Every 3rd result
-            print(f"\nSeeker-o1 Wisdom: {random.choice(self._anus_jokes)}")
+            print(f"\nSeeker-o1 Wisdom: {random.choice(self._seeker_o1_jokes)}")
     
     def do_task(self, arg: str) -> None:
         """
@@ -323,7 +323,7 @@ class CLI(cmd.Cmd):
         
         Usage: joke
         """
-        joke = random.choice(self._anus_jokes)
+        joke = random.choice(self._seeker_o1_jokes)
         
         term_width = shutil.get_terminal_size().columns
         
@@ -365,7 +365,7 @@ class CLI(cmd.Cmd):
         """
         # 1 in 10 chance to show a joke on empty line
         if random.random() < 0.1:
-            print(f"Seeker-o1 is waiting... {random.choice(self._anus_jokes)}")
+            print(f"Seeker-o1 is waiting... {random.choice(self._seeker_o1_jokes)}")
     
     def _pretty_print(self, data: Any) -> None:
         """

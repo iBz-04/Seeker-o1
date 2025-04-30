@@ -1,5 +1,5 @@
 """
-Long-term memory module for the ANUS framework.
+Long-term memory module for the seeker-o1 framework.
 """
 
 from typing import Dict, List, Any, Optional, Union
@@ -41,7 +41,7 @@ class LongTermMemory(BaseMemory):
         # Set storage path
         if storage_path is None:
             home_dir = os.path.expanduser("~")
-            storage_path = os.path.join(home_dir, ".anus", "memory")
+            storage_path = os.path.join(home_dir, ".seeker-o1", "memory")
         
         self.storage_path = storage_path
         self.index_in_memory = index_in_memory

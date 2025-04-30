@@ -1,6 +1,6 @@
-# Anus Tools Module
+# Seeker-o1 Tools Module
 
-This module contains the tool ecosystem components of the Anus AI framework, including:
+This module contains the tool ecosystem components of the Seeker-o1 AI framework, including:
 
 - Web Interaction Tools (Browser Automation)
 - Information Retrieval Tools (Search, Wikipedia)

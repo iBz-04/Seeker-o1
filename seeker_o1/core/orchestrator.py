@@ -216,7 +216,7 @@ class AgentOrchestrator:
         # Default configuration
         default_config = {
             "agent": {
-                "name": "anus",
+                "name": "seeker-o1",
                 "mode": "single",
                 "max_iterations": 10,
                 "complexity_threshold": 7
@@ -296,7 +296,7 @@ class AgentOrchestrator:
         """
         # Get agent config
         agent_config = self.config.get("agent", {})
-        name = agent_config.get("name", "anus")
+        name = agent_config.get("name", "seeker-o1")
         mode = agent_config.get("mode", "single")
         max_iterations = agent_config.get("max_iterations", 10)
         complexity_threshold = agent_config.get("complexity_threshold", 7)

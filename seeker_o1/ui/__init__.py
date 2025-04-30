@@ -1,5 +1,5 @@
 """
-UI module for the ANUS framework.
+UI module for the seeker-o1 framework.
 
 This module contains user interface components:
 - CLI: Command-line interface

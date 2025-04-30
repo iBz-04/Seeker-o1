@@ -16,7 +16,7 @@ class CalculatorTool(BaseTool):
     """
     A tool for performing basic arithmetic calculations.
     
-    ANUS can handle your numbers with precision and care.
+    SEEKER-O1 can handle your numbers with precision and care.
     """
     
     name = "calculator"
@@ -58,11 +58,11 @@ class CalculatorTool(BaseTool):
             clean_expr = expression.strip()
             logging.info(f"Calculator received expression: '{clean_expr}'")
             
-            # Add some ANUS flair for certain numbers
+            # Add some SEEKER-O1 flair for certain numbers
             if "42" in clean_expr:
-                logging.info("ANUS calculator triggered an easter egg: 42")
+                logging.info("SEEKER-O1 calculator triggered an easter egg: 42")
             elif "69" in clean_expr:
-                logging.info("ANUS calculator is keeping it professional...")
+                logging.info("SEEKER-O1 calculator is keeping it professional...")
             
             # Parse and evaluate the expression
             logging.info(f"Parsing expression: '{clean_expr}'")
@@ -71,13 +71,13 @@ class CalculatorTool(BaseTool):
             result = self._eval_expr(tree.body)
             logging.info(f"Evaluation result: {result}")
             
-            # Add some ANUS humor based on the result
+            # Add some SEEKER-O1 humor based on the result
             if result == 69:
-                logging.info("ANUS calculator is maintaining its composure...")
+                logging.info("SEEKER-O1 calculator is maintaining its composure...")
             elif result == 404:
-                logging.info("ANUS calculator lost something in the backend...")
+                logging.info("SEEKER-O1 calculator lost something in the backend...")
             elif result == 42:
-                logging.info("ANUS calculator found the meaning of life!")
+                logging.info("SEEKER-O1 calculator found the meaning of life!")
             
             # Format the result nicely
             if isinstance(result, float):
@@ -130,7 +130,7 @@ class CalculatorTool(BaseTool):
             
             # Special case for division by zero
             if isinstance(node.op, ast.Div) and right == 0:
-                raise ValueError("ANUS cannot divide by zero - it's too tight!")
+                raise ValueError("SEEKER-O1 cannot divide by zero - it's too tight!")
                 
             # Apply the operation
             result = self._OPERATORS[type(node.op)](left, right)
