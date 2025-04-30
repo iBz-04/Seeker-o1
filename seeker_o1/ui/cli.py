@@ -39,7 +39,7 @@ class CLI(cmd.Cmd):
     Warning: Prolonged exposure to Seeker-o1 may cause uncontrollable smirking.
     """
     
-    intro = "Greetings! You've entered the Seeker-o1. type help or ? to see available commands."
+    intro = "Greetings! what do you seek?. type help or ? to see available commands."
     prompt = "command me ~>"
     
     # Easter egg jokes for random display
@@ -81,7 +81,7 @@ class CLI(cmd.Cmd):
         self.console = Console()
         
         # Set styled prompt
-        self.raw_prompt = "seeker_o1> "
+        self.raw_prompt = "command_me~> "
         self.prompt = self.raw_prompt  # Keep plain prompt for cmd module
     
     def display_welcome(self) -> None:
@@ -94,7 +94,7 @@ class CLI(cmd.Cmd):
         
         # Create a title panel
         title = Text("Seeker-o1", style="bold cyan")
-        subtitle = Text("Autonomous Networked Utility System", style="italic")
+        subtitle = Text("AI Agent System", style="italic")
         version = Text("v1.0.0", style="dim")
         
         # Create a joke text
@@ -103,7 +103,7 @@ class CLI(cmd.Cmd):
         # Create centered content
         content = "\n".join([
             f"[bold cyan]{' ' * ((term_width - len('Seeker-o1')) // 2)}Seeker-o1[/bold cyan]",
-            f"[italic]{' ' * ((term_width - len('Autonomous Networked Utility System')) // 2)}Autonomous Networked Utility System[/italic]",
+            f"[italic]{' ' * ((term_width - len('AI Agent System')) // 2)}AI Agent System[/italic]",
             f"[dim]{' ' * ((term_width - len('v1.0.0')) // 2)}v1.0.0[/dim]",
             "",
             f"[yellow italic]{' ' * ((term_width - len(joke_text)) // 2)}{joke_text}[/yellow italic]"
@@ -520,7 +520,7 @@ class CLI(cmd.Cmd):
         while not stop:
             try:
                 # Print styled prompt
-                self.console.print("[bold cyan]seeker_o1[/bold cyan][bold white]>[/bold white] ", end="")
+                self.console.print("[bold cyan]command_me[/bold cyan][bold white] ~>[/bold white] ", end="")
                 line = input()
                 line = self.precmd(line)
                 stop = self.onecmd(line)
