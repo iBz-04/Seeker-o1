@@ -6,10 +6,12 @@ This agent can dynamically switch between single and multi-agent modes based on 
 
 import logging
 import re
+import os
 from typing import Dict, Any, List, Tuple, Optional
 
 from seeker_o1.core.agent.tool_agent import ToolAgent
 from seeker_o1.models.model_router import ModelRouter
+from seeker_o1.models.vision_model import VisionModel
 
 logger = logging.getLogger(__name__)
 
@@ -116,6 +118,19 @@ class HybridAgent(ToolAgent):
         Returns:
             A dictionary containing the execution result and metadata.
         """
+        tokens = task.split()
+        if tokens:
+            last_token = tokens[-1]
+            if os.path.exists(last_token) and last_token.lower().endswith((".png",".jpg",".jpeg",".bmp",".gif")):
+                prompt_text = " ".join(tokens[:-1])
+                vm = VisionModel()
+                raw = vm.read_text(last_token)
+                if raw:
+                    task = f"{prompt_text} {raw}"
+                else:
+                    caption = vm.describe_image(last_token)
+                    task = f"{prompt_text} {caption}"
+        
         mode_override = kwargs.get("mode")
         if mode_override == "single":
             logging.info("Single-agent mode activated.")

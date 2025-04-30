@@ -1,6 +1,4 @@
-# Seeker-o1 Models Module
-
-This module contains the model integration components of the Seeker-o1 AI framework, including:
+# Seeker-o1 Models 
 
 - OpenAI API Support
 - Open-Source Model Support
@@ -18,8 +16,6 @@ Integration with OpenAI API models (GPT-4, etc.).
 ### open_source_model.py
 Integration with open-source models (Llama, Mistral, etc.).
 
-### vision_model.py
-Integration with vision models for image understanding.
 
 ### model_manager.py
 Model selection, switching, and fallback mechanisms.

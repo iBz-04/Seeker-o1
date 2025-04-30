@@ -21,6 +21,9 @@ pypdf>=3.15.0
 python-docx>=0.8.11
 openpyxl>=3.1.2
 pillow>=10.0.0
+transformers>=4.0.0
+torch>=2.0.0
+pytesseract>=0.3.10
 
 # Code execution
 jupyter-client>=8.3.0

@@ -2,6 +2,7 @@ from seeker_o1.models.base.base_model import BaseModel
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
 import torch
+import pytesseract
 
 class VisionModel(BaseModel):
     def __init__(self, model_name="BLIP", **kwargs):
@@ -25,4 +26,8 @@ class VisionModel(BaseModel):
         with torch.no_grad():
             out = self.model.generate(**inputs)
         caption = self.processor.decode(out[0], skip_special_tokens=True)
-        return caption 
+        return caption
+    def read_text(self, image_path):
+        image = Image.open(image_path)
+        text = pytesseract.image_to_string(image)
+        return text.strip() 

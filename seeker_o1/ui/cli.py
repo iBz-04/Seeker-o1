@@ -204,12 +204,16 @@ class CLI(cmd.Cmd):
     
     def do_task(self, arg: str) -> None:
         """
-        Execute a task.
-        
-        Usage: task [mode] <task description>
-        
+        Execute a task, with optional image input.
+
+        Usage:
+            task [mode] <task description> [image_path]
+
+        Example:
+            task multi solve the math problem in this image ./equation.png
+
         Args:
-            arg: Task description and optional mode.
+            arg: Task description, optional mode (single|multi|auto), and optional image path.
         """
         # Make sure orchestrator is initialized
         if not self.orchestrator:
