@@ -1,4 +1,3 @@
-
 <div align="center">
    <h1>Seeker-o1 </h1>
 </div>
@@ -22,12 +21,36 @@
 - [Community](#-community)
 - [License](#-license)
 
-## 🌟 Introduction
+## Intro
 
-**Seeker-o1**  is a flexible open-source AI agent system. It is also an upgrade and an alternative of  [@Seeker](https://github.com/iBz-04/Seeker) the deep research agent
+**Seeker-o1**  is a flexible open-source AI agent system. It is also an upgrade and an alternative of [@Seeker](https://github.com/iBz-04/Seeker) the deep research agent
 
-## demo
+## Demo
+
+## video
 https://github.com/user-attachments/assets/b1b68a64-425d-487a-b3bc-741f124caa1b
+
+### Image Recognition
+
+Add the path to your image them giving a task to the agent:
+
+```task "solve this problem in the image" sample_images/deqn.png ```
+
+![Demo Equation](sample_images/deqn.png)
+
+Answer:
+
+![Answer](https://res.cloudinary.com/diekemzs9/image/upload/v1746049727/Screenshot_2025-05-01_002746_qeikjy.png)
+
+
+### Memory
+
+The agent has both short-term and long-term memory
+
+```below is a long term memory example```
+
+![long-term memory](https://res.cloudinary.com/diekemzs9/image/upload/v1746049953/Screenshot_2025-04-30_200011_rskcxv.png)
+
 
 Seeker-o1 empowers users to create AI agents that can:
 
@@ -40,13 +63,13 @@ Seeker-o1 empowers users to create AI agents that can:
 
 ## ✨ Features & Capabilities
 
-### 🧠 AI Agent Architecture
+### AI Agent Architecture
 
 - **Single-Agent System**: Process and execute tasks with a single agent
 - **Tool Integration**: Use a variety of tools to accomplish tasks
 - **Memory Management**: Basic context retention during conversation
 
-### 🛠️ Current Tool Ecosystem
+### Current Tool Ecosystem
 
 - **Text Processing**:
   - Character counting
@@ -61,7 +84,7 @@ Seeker-o1 empowers users to create AI agents that can:
   - Basic arithmetic operations
   - Expression evaluation
 
-### 🔄 API Integration
+###  API Integration
 
 - **OpenAI API Support**: Seamless integration with GPT models
 
@@ -100,20 +123,39 @@ After installation, you'll need to configure Seeker-o1 with your API keys:
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
-Once installed, you can start using Seeker-o1 with the provided examples:
+### CLI Mode
 
-```python
-from seeker_o1.core.agent.tool_agent import ToolAgent
+Start interactive mode:
 
-# Create an agent with calculator capabilities
-agent = ToolAgent(tools=["calculator"])
+```best & simplest Option```
 
-# Execute a calculation
-response = agent.execute("Calculate 2 + 2 * 3")
-print(response)
+In your terminal, simply type: 
+```bash
+seeker-o1
 ```
+
+```Alternatively : ```
+
+After installing in editable or standard mode, you can launch the Seeker-o1 CLI directly:
+
+```bash
+seeker-o1 --help
+```
+
+This displays global options. To run a one-off task:
+
+```bash
+seeker-o1 --mode multi --task "solve the math problem in this image" assets/images/equation.png
+```
+
+
+Once inside, use `help` or `?` to list available commands, and `task` to execute tasks.
+
+
+
+
 
 ## 📋 Usage Examples
 
@@ -151,39 +193,10 @@ For more detailed information, please refer to the documentation in the `docs/` 
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information on how to get involved.
+We welcome contributions from the community, feel free to report issues, request features or submit pull requests!
 
-## 👥 Community
 
-Join our community to discuss Seeker-o1, get help, and share your projects:
-
-- [GitHub Discussions](https://github.com/nikmcfly/Seeker-o1/discussions)
-- [Telegram Group](https://t.me/seeker_o1)
 
 ## 📄 License
 
 Seeker-o1 is released under the [MIT License](LICENSE).
-
-```
-MIT License
-
-Copyright (c) 2025 Seeker-o1 / Omnisoft
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
