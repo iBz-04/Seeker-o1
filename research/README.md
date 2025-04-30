@@ -1,6 +1,6 @@
 # Research
 
-This directory contains research materials, analysis documents, and technical investigations related to the ANUS project.
+This directory contains research materials, analysis documents, and technical investigations related to the SEEKER-O1 project.
 
 ## Contents
 

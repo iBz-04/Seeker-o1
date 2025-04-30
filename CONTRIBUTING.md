@@ -1,8 +1,8 @@
 # CONTRIBUTING.md
 
-# Contributing to Anus AI
+# Contributing to Seeker-o1 AI
 
-Thank you for your interest in contributing to Anus AI! This document provides guidelines and instructions for contributing to the project.
+Thank you for your interest in contributing to Seeker-o1 AI! This document provides guidelines and instructions for contributing to the project.
 
 ## Table of Contents
 
@@ -17,20 +17,20 @@ Thank you for your interest in contributing to Anus AI! This document provides g
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Anus AI Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
+This project and everyone participating in it is governed by the [Seeker-o1 AI Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
 
 ## How Can I Contribute?
 
 ### Reporting Bugs
 
-- **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/anus-ai/anus/issues).
-- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/anus-ai/anus/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
+- **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/seeker-o1-ai/seeker-o1/issues).
+- If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/seeker-o1-ai/seeker-o1/issues/new). Be sure to include a **title and clear description**, as much relevant information as possible, and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
 
 ### Suggesting Enhancements
 
 - Open a new issue with a clear title and detailed description.
 - Provide specific examples and steps to demonstrate the enhancement.
-- Explain why this enhancement would be useful to most Anus AI users.
+- Explain why this enhancement would be useful to most Seeker-o1 AI users.
 
 ### Your First Code Contribution
 
@@ -60,8 +60,8 @@ This project and everyone participating in it is governed by the [Anus AI Code o
 1. Fork the repository on GitHub.
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/your-username/anus.git
-   cd anus
+   git clone https://github.com/your-username/seeker-o1.git
+   cd seeker-o1
    ```
 
 3. Create a virtual environment:
@@ -153,6 +153,6 @@ Types include:
 
 Join our community to get help, share ideas, and contribute to the project:
 
-- [Telegram Channel](https://t.me/goanus)
+- [Telegram Channel](https://t.me/goseekero1)
 
-Thank you for contributing to Anus AI!
+Thank you for contributing to Seeker-o1 AI!

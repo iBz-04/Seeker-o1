@@ -1,6 +1,6 @@
 # Tests
 
-This directory contains test cases for the Anus AI agent framework.
+This directory contains test cases for the Seeker-o1 AI agent framework.
 
 ## Unit Tests
 

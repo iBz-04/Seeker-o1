@@ -8,7 +8,7 @@ import logging
 from seeker_o1.models.base.base_model import BaseModel
 from seeker_o1.models.openai_model import OpenAIModel
 # Placeholder for other model imports
-# from anus.models.anthropic_model import AnthropicModel
+# from seeker-o1.models.anthropic_model import AnthropicModel
 
 class ModelRouter:
     """

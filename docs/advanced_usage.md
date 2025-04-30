@@ -1,6 +1,6 @@
 # Advanced Usage Guide
 
-This document provides advanced usage examples and techniques for getting the most out of the Anus AI framework.
+This document provides advanced usage examples and techniques for getting the most out of the Seeker-o1 AI framework.
 
 ## Table of Contents
 - [Multi-Agent Collaboration](#multi-agent-collaboration)
@@ -18,7 +18,7 @@ This document provides advanced usage examples and techniques for getting the mo
 You can create specialized agents with different roles to handle complex tasks:
 
 ```python
-from anus import Agent, Society
+from seeker_o1 import Agent, Society
 
 # Create specialized agents
 researcher = Agent(
@@ -54,7 +54,7 @@ response = society.run(
 
 ### Custom Coordination Strategies
 
-Anus supports different coordination strategies for multi-agent collaboration:
+Seeker-o1 supports different coordination strategies for multi-agent collaboration:
 
 ```python
 # Consensus strategy - all agents must agree on decisions
@@ -82,7 +82,7 @@ society = Society(
 You can customize how agents communicate with each other:
 
 ```python
-from anus import Society, Agent, CommunicationProtocol
+from seeker_o1 import Society, Agent, CommunicationProtocol
 
 # Create a custom communication protocol
 protocol = CommunicationProtocol(
@@ -105,7 +105,7 @@ society = Society(
 You can create custom tools by extending the `BaseTool` class:
 
 ```python
-from anus.tools import BaseTool
+from seeker_o1.tools import BaseTool
 from typing import Dict, Any
 
 class WeatherTool(BaseTool):
@@ -134,7 +134,7 @@ class WeatherTool(BaseTool):
         }
 
 # Use the custom tool
-from anus import Agent
+from seeker_o1 import Agent
 
 agent = Agent(tools=[WeatherTool(api_key="your_api_key")])
 response = agent.run("What's the weather like in New York?")
@@ -145,7 +145,7 @@ response = agent.run("What's the weather like in New York?")
 You can register custom tools with the tool registry:
 
 ```python
-from anus.tools import register_tool, get_tool
+from seeker_o1.tools import register_tool, get_tool
 
 # Register your custom tool
 register_tool("weather", WeatherTool)
@@ -160,7 +160,7 @@ weather_tool = weather_tool_class(api_key="your_api_key")
 You can compose multiple tools together:
 
 ```python
-from anus.tools import ComposedTool, SearchTool, DocumentTool
+from seeker_o1.tools import ComposedTool, SearchTool, DocumentTool
 
 # Create a composed tool that combines search and document processing
 research_tool = ComposedTool(
@@ -179,7 +179,7 @@ agent = Agent(tools=[research_tool])
 You can create different configurations for different environments:
 
 ```python
-from anus import Config, Agent
+from seeker_o1 import Config, Agent
 
 # Development configuration
 dev_config = Config.from_file("config.dev.yaml")
@@ -189,7 +189,7 @@ prod_config = Config.from_file("config.prod.yaml")
 
 # Choose configuration based on environment
 import os
-env = os.getenv("ANUS_ENV", "development")
+env = os.getenv("SEEKER_O1_ENV", "development")
 config = dev_config if env == "development" else prod_config
 
 agent = Agent(config=config)
@@ -200,7 +200,7 @@ agent = Agent(config=config)
 You can modify configuration at runtime:
 
 ```python
-from anus import Agent, Config
+from seeker_o1 import Agent, Config
 
 # Create initial configuration
 config = Config(
@@ -230,7 +230,7 @@ response = agent.run("Generate a creative story")
 You can create and switch between configuration profiles:
 
 ```python
-from anus import Agent, ConfigProfile
+from seeker_o1 import Agent, ConfigProfile
 
 # Create configuration profiles
 creative_profile = ConfigProfile(
@@ -268,7 +268,7 @@ precise_response = agent.run("Explain quantum computing")
 You can save and load agent memory:
 
 ```python
-from anus import Agent
+from seeker_o1 import Agent
 
 # Create agent with persistent memory
 agent = Agent(memory_type="persistent", memory_path="./agent_memory")
@@ -290,7 +290,7 @@ response = new_agent.run("What is my favorite color and when is my birthday?")
 
 ### Memory Types
 
-Anus supports different types of memory:
+Seeker-o1 supports different types of memory:
 
 ```python
 # Ephemeral memory (default) - lasts only for the current session
@@ -336,7 +336,7 @@ print(f"Memory size: {stats['size']}, Items: {stats['items']}")
 You can process multiple tasks in batch for better performance:
 
 ```python
-from anus import Agent
+from seeker_o1 import Agent
 
 agent = Agent()
 
@@ -362,7 +362,7 @@ for task, result in zip(tasks, results):
 You can enable caching to improve performance for repeated tasks:
 
 ```python
-from anus import Agent, CacheConfig
+from seeker_o1 import Agent, CacheConfig
 
 # Configure caching
 cache_config = CacheConfig(
@@ -386,7 +386,7 @@ result2 = agent.run("What is the capital of France?")  # Much faster
 You can stream responses for better user experience:
 
 ```python
-from anus import Agent
+from seeker_o1 import Agent
 
 agent = Agent()
 
@@ -399,11 +399,11 @@ for chunk in agent.stream_run("Write a short story about a robot learning to fee
 
 ### API Integration
 
-You can expose Anus AI as an API:
+You can expose Seeker-o1 AI as an API:
 
 ```python
 from fastapi import FastAPI
-from anus import Agent
+from seeker_o1 import Agent
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -423,14 +423,14 @@ async def run_task(request: TaskRequest):
 
 ### Database Integration
 
-You can integrate Anus with databases:
+You can integrate Seeker-o1 with databases:
 
 ```python
 import sqlite3
-from anus import Agent
+from seeker_o1 import Agent
 
 # Create a database connection
-conn = sqlite3.connect("anus_data.db")
+conn = sqlite3.connect("seeker_o1_data.db")
 cursor = conn.cursor()
 
 # Create a table
@@ -469,7 +469,7 @@ conn.close()
 You can set up webhooks for asynchronous processing:
 
 ```python
-from anus import Agent, WebhookConfig
+from seeker_o1 import Agent, WebhookConfig
 import requests
 
 # Configure webhooks
@@ -495,14 +495,14 @@ print(f"Task status: {status}")
 
 ### Docker Deployment
 
-You can deploy Anus AI using Docker:
+You can deploy Seeker-o1 AI using Docker:
 
 ```bash
 # Build the Docker image
-docker build -t anus-ai .
+docker build -t seeker-o1-ai .
 
 # Run the container
-docker run -p 8000:8000 -v ./config:/app/config -v ./data:/app/data anus-ai
+docker run -p 8000:8000 -v ./config:/app/config -v ./data:/app/data seeker-o1-ai
 ```
 
 ### Kubernetes Deployment
@@ -510,48 +510,48 @@ docker run -p 8000:8000 -v ./config:/app/config -v ./data:/app/data anus-ai
 For more complex deployments, you can use Kubernetes:
 
 ```yaml
-# anus-deployment.yaml
+# seeker-o1-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: anus-ai
+  name: seeker-o1-ai
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: anus-ai
+      app: seeker-o1-ai
   template:
     metadata:
       labels:
-        app: anus-ai
+        app: seeker-o1-ai
     spec:
       containers:
-      - name: anus-ai
-        image: anus-ai:latest
+      - name: seeker-o1-ai
+        image: seeker-o1-ai:latest
         ports:
         - containerPort: 8000
         volumeMounts:
-        - name: config-volume
+        - name: seeker-o1-config
           mountPath: /app/config
-        - name: data-volume
+        - name: seeker-o1-data
           mountPath: /app/data
       volumes:
-      - name: config-volume
+      - name: seeker-o1-config
         configMap:
-          name: anus-config
-      - name: data-volume
+          name: seeker-o1-config
+      - name: seeker-o1-data
         persistentVolumeClaim:
-          claimName: anus-data-pvc
+          claimName: seeker-o1-data-pvc
 ```
 
 ### Serverless Deployment
 
-You can deploy Anus AI as a serverless function:
+You can deploy Seeker-o1 AI as a serverless function:
 
 ```python
 # AWS Lambda function
 import json
-from anus import Agent
+from seeker_o1 import Agent
 
 agent = Agent()
 
@@ -578,6 +578,6 @@ def lambda_handler(event, context):
 
 ## Conclusion
 
-This advanced usage guide demonstrates the flexibility and power of the Anus AI framework. By leveraging these advanced features, you can build sophisticated AI agent systems tailored to your specific needs.
+This advanced usage guide demonstrates the flexibility and power of the Seeker-o1 AI framework. By leveraging these advanced features, you can build sophisticated AI agent systems tailored to your specific needs.
 
 For more information, refer to the [API Reference](api_reference.md) and [Architecture Overview](architecture_overview.md) documents.
