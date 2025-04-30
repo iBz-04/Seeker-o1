@@ -1124,7 +1124,7 @@ from seeker-o1.ui.cli import CLI
 async def main():
     """Main entry point for the seeker-o1 framework"""
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description="seeker-o1 - Autonomous Networked Utility System")
+    parser = argparse.ArgumentParser(description="seeker-o1 - Agentic ai system")
     parser.add_argument("--config", type=str, default="config.yaml", help="Path to configuration file")
     parser.add_argument("--mode", type=str, default="single", choices=["single", "multi"], help="Agent mode")
     parser.add_argument("--task", type=str, help="Task description")

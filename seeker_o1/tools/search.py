@@ -18,7 +18,7 @@ class SearchTool(BaseTool):
     """
     A tool for simulating web searches.
     
-    Seeker-o1 can search the web for information, though the results might be a bit cheeky.
+    Seeker-o1 has the ability to surf the web for you.
     """
     
     name = "search"
@@ -37,38 +37,38 @@ class SearchTool(BaseTool):
     # Mock search results for common queries
     _mock_results = {
         "seeker-o1": [
-            "Anatomical term for the opening at the end of the digestive tract",
-            "SEEKER-O1: Autonomous Networked Utility System - An open-source AI framework",
-            "10 Facts About the SEEKER-O1 Framework You Won't Believe!",
-            "Why SEEKER-O1 is the Most Uncomfortably Named Software Project"
+            "An ai multi agent system and superset of the seeker project",
+            "SEEKER-O1: Agentic system",
+            "10 facts about seeker-o1",
+            "The Story Behind seeker-o1 model"
         ],
         "python": [
-            "Python - High-level programming language",
-            "Python (programming language) - Wikipedia",
-            "Python.org - Official Python documentation and downloads",
-            "Learning Python: The Definitive Guide"
+            "Python: A versatile, high-level programming language",
+            "Wikipedia entry on Python (programming language)",
+            "Official Python website for documentation and downloads",
+            "Mastering Python: An Essential Learning Resource"
         ],
         "ai": [
-            "Artificial Intelligence - Overview, applications, and recent advances",
-            "The Future of AI: Challenges and Opportunities",
-            "OpenAI - Leading AI research laboratory",
-            "How AI is Transforming Industries in 2025"
+            "Artificial Intelligence: Concepts, uses, and new developments",
+            "AI's Future: Opportunities and Hurdles Ahead",
+            "OpenAI: Pioneers in AI research and innovation",
+            "How Artificial Intelligence Is Shaping the World in 2025"
         ],
         "calculator": [
-            "Online Calculator - Free and Easy to Use",
-            "Scientific Calculator with Advanced Functions",
-            "History of the Calculator: From Abacus to Digital",
-            "Best Calculator Apps for Professionals"
+            "Free Online Calculator for Everyday Math",
+            "Advanced Scientific Calculator Tools",
+            "From Abacus to Apps: The Evolution of Calculators",
+            "Top Calculator Applications for Experts"
         ]
     }
     
     # Funny search messages
     _search_messages = [
-        "SEEKER-O1 is probing the depths of the internet...",
-        "SEEKER-O1 is digging deep for results...",
-        "SEEKER-O1 is spreading wide to find all relevant information...",
-        "SEEKER-O1 is penetrating the web for answers...",
-        "SEEKER-O1 is squeezing out search results..."
+        "SEEKER-O1 is scouring the internet for insights...",
+        "SEEKER-O1 is delving deep to uncover results...",
+        "SEEKER-O1 is casting a wide net for information...",
+        "SEEKER-O1 is navigating the web in search of answers...",
+        "SEEKER-O1 is extracting search results from the web..."
     ]
     
     def execute(self, query: str, **kwargs) -> Union[Dict[str, Any], ToolResult]:

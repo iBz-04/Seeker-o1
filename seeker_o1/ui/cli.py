@@ -39,21 +39,21 @@ class CLI(cmd.Cmd):
     Warning: Prolonged exposure to Seeker-o1 may cause uncontrollable smirking.
     """
     
-    intro = "Welcome to the Seeker-o1 framework. Type help or ? to list commands."
-    prompt = "seeker_o1> "
+    intro = "Greetings! You've entered the Seeker-o1. type help or ? to see available commands."
+    prompt = "command me ~>"
     
     # Easter egg jokes for random display
     _seeker_o1_jokes = [
-        "Seeker-o1: Because 'Autonomous Networked Utility System' sounds better in meetings.",
-        "Seeker-o1: The backend system that handles all your crap.",
-        "Seeker-o1: Boldly going where no framework has gone before.",
-        "Seeker-o1: It's not a bug, it's a feature... a very uncomfortable feature.",
-        "Seeker-o1: For when your code needs that extra push from behind.",
-        "Seeker-o1: Working hard so you don't have to explain the acronym to your boss.",
-        "Seeker-o1: The framework that makes other developers snicker during code review.",
-        "Seeker-o1: Tight integration with your backend systems.",
-        "Seeker-o1: Because 'BUTT' was already taken as an acronym.",
-        "Seeker-o1: Making developers uncomfortable in stand-up meetings since 2023."
+        "Seeker-o1: The AI that pretends to understand your code better than you do.",
+        "Seeker-o1: Because debugging is just another way to say 'fun'.",
+        "Seeker-o1: Making your code look like it was written by a genius... sometimes.",
+        "Seeker-o1: The only model that can out-sarcasm your team lead.",
+        "Seeker-o1: Turning your 'oops' moments into 'aha' moments.",
+        "Seeker-o1: The AI that knows your code's secrets and won't tell... probably.",
+        "Seeker-o1: Because who doesn't love a little chaos in their workflow?",
+        "Seeker-o1: Making your code reviews a little more entertaining.",
+        "Seeker-o1: The framework that laughs in the face of deadlines.",
+        "Seeker-o1: Helping you find bugs you didn't even know you had since 2024."
     ]
     
     def __init__(self, verbose: bool = False, config_path: str = "config.yaml"):
