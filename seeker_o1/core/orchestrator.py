@@ -190,7 +190,7 @@ class AgentOrchestrator:
             A list of task history records.
         """
         if limit > 50:
-            logger.warning(f"Requesting {limit} history items? That's a deep dive into ANUS history!")
+            logger.warning(f"Requesting {limit} history items? That's a deep dive into seeker-o1 history!")
         
         return self.task_history[-limit:]
     
@@ -245,7 +245,7 @@ class AgentOrchestrator:
         # Check if config file exists
         if not os.path.exists(config_path):
             logger.warning(f"Config file {config_path} not found. Using default configuration.")
-            logger.info("ANUS is running with default settings. It might be a tight fit for complex tasks.")
+            logger.info("seeker-o1 is running with default settings. It might be a tight fit for complex tasks.")
             return default_config
         
         try:
@@ -256,14 +256,14 @@ class AgentOrchestrator:
             # Merge with default config
             merged_config = self._merge_configs(default_config, config)
             
-            logger.info("ANUS configuration loaded successfully")
+            logger.info("seeker-o1 configuration loaded successfully")
             if merged_config.get("agent", {}).get("mode") == "multi":
-                logger.info("ANUS is configured for multi-agent mode - it's going to get crowded in there!")
+                logger.info("seeker-o1 is configured for multi-agent mode - it's going to get crowded in there!")
             
             return merged_config
         except Exception as e:
             logger.error(f"Error loading config file: {e}")
-            logger.info("ANUS reverted to default configuration. Performance may not be optimal.")
+            logger.info("seeker-o1 reverted to default configuration. Performance may not be optimal.")
             return default_config
     
     def _merge_configs(self, default: Dict[str, Any], override: Dict[str, Any]) -> Dict[str, Any]:
@@ -305,11 +305,11 @@ class AgentOrchestrator:
         tools_config = self.config.get("tools", {})
         enabled_tools = tools_config.get("enabled", [])
         
-        # Create memories
+        
         short_term_memory = self._create_short_term_memory()
         long_term_memory = self._create_long_term_memory()
         
-        # Create the agent
+        
         agent = HybridAgent(
             name=name,
             max_iterations=max_iterations,
@@ -320,14 +320,14 @@ class AgentOrchestrator:
             long_term_memory=long_term_memory
         )
         
-        logger.info(f"Primary agent created. ANUS is ready with {len(enabled_tools)} tools available")
+        logger.info(f"Primary agent created. seeker-o1 is ready with {len(enabled_tools)} tools available")
         
-        # Create specialized agents if in multi mode
+        
         if mode == "multi" or mode == "auto":
             self._create_specialized_agents(agent)
-            logger.info("Multiple specialized agents have been inserted into ANUS")
+            logger.info("Multiple specialized agents have been inserted into seeker-o1")
         
-        # Register the agent
+        
         self.agents[name] = agent
         
         return agent
@@ -343,7 +343,7 @@ class AgentOrchestrator:
         capacity = memory_config.get("capacity", 1000)
         ttl = memory_config.get("ttl", 3600)
         
-        logger.debug(f"Initializing ANUS short-term memory with capacity {capacity}")
+        logger.debug(f"Initializing seeker-o1 short-term memory with capacity {capacity}")
         return ShortTermMemory(capacity=capacity, ttl=ttl)
     
     def _create_long_term_memory(self) -> Optional[LongTermMemory]:
@@ -357,16 +357,16 @@ class AgentOrchestrator:
         enabled = memory_config.get("enabled", True)
         
         if not enabled:
-            logger.info("Long-term memory disabled. ANUS will forget everything after each session.")
+            logger.info("Long-term memory disabled. seeker-o1 will forget everything after each session.")
             return None
         
         storage_path = memory_config.get("storage_path")
         index_in_memory = memory_config.get("index_in_memory", True)
         
         if storage_path:
-            logger.debug(f"ANUS will store long-term memories at: {storage_path}")
+            logger.debug(f"seeker-o1 will store long-term memories at: {storage_path}")
         else:
-            logger.debug("ANUS will store long-term memories in the default location")
+            logger.debug("seeker-o1 will store long-term memories in the default location")
         
         return LongTermMemory(storage_path=storage_path, index_in_memory=index_in_memory)
     
@@ -400,8 +400,8 @@ class AgentOrchestrator:
             
             # Add to the primary agent
             # primary_agent.add_specialized_agent(role, merged_config)
-            # logger.debug(f"Added {role} agent to ANUS")
+            # logger.debug(f"Added {role} agent to seeker-o1")
         
-        logger.info(f"ANUS now contains {len(roles)} specialized agents working together harmoniously")
+        logger.info(f"seeker-o1 now contains {len(roles)} specialized agents working together harmoniously")
         if len(roles) > 5:
-            logger.warning("That's a lot of agents to fit inside one ANUS. Performance may be affected.") 
+            logger.warning("That's a lot of agents, Performance may be affected.") 
