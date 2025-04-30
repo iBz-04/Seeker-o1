@@ -8,18 +8,25 @@
 
 
 
-## Table of Contents
+## Contents
 
-- [Introduction](#-introduction)
-- [Why Seeker-o1?](#-why-seeker-o1)
-- [Features & Capabilities](#-features--capabilities)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Usage Examples](#-usage-examples)
-- [Documentation](#-documentation)
-- [Contributing](#-contributing)
-- [Community](#-community)
-- [License](#-license)
+- [Intro](#intro)
+- [Demo](#demo)
+  - [video](#video)
+  - [Image Recognition](#image-recognition)
+  - [Memory](#memory)
+- [Features & Capabilities](#features--capabilities)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Quick Start](#quick-start)
+  - [CLI Mode](#cli-mode)
+- [Usage Examples](#usage-examples)
+- [Basic Examples](#basic-examples)
+  - [Text Processing](#text-processing)
+  - [Code Execution](#code-execution)
+- [Contributions](#contributions)
+- [License](#license)
 
 ## Intro
 
@@ -187,15 +194,10 @@ response = agent.execute("Run code ```print('Hello, world!')```")
 print(response)
 ```
 
-## 📖 Documentation
 
-For more detailed information, please refer to the documentation in the `docs/` directory.
-
-## 🤝 Contributing
+## Contributions
 
 We welcome contributions from the community, feel free to report issues, request features or submit pull requests!
-
-
 
 ## 📄 License
 
