@@ -24,7 +24,7 @@
 
 ## 🌟 Introduction
 
-**Seeker-o1**  is a powerful, flexible, and accessible open-source AI agent framework designed to revolutionize task automation. It is also an upgrade  and re-implementation of  [@Seeker](https://github.com/iBz-04/Seeker)
+**Seeker-o1**  is a powerful, flexible, and accessible open-source AI agent system designed to revolutionize task automation. It is also an upgrade and extension of  [@Seeker](https://github.com/iBz-04/Seeker)
 
 Seeker-o1 empowers users to create AI agents that can:
 

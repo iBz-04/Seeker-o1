@@ -118,25 +118,25 @@ class HybridAgent(ToolAgent):
         """
         mode_override = kwargs.get("mode")
         if mode_override == "single":
-            logging.info("Forced single-agent mode by override.")
+            logging.info("Single-agent mode activated.")
             model = ModelRouter().get_default_model()
             answer = model.generate(task)
             return {"task": task, "answer": answer, "mode": "single"}
         if mode_override == "multi":
-            logging.info("Forced multi-agent mode by override.")
+            logging.info("Multi-agent mode activated.")
             return self._execute_multi_agent(task, **kwargs)
         complexity = self._assess_complexity(task)
         
         # Decide on mode based on complexity
         if complexity < 3.0:
-            logging.info(f"Task complexity ({complexity:.1f}) below threshold (3.0). SEEKER-O1 staying tight in single-agent mode.")
-            logging.info("This task is so simple even a constipated SEEKER-O1 could handle it.")
+            logging.info(f"Task difficulty ({complexity:.1f}) below threshold (3.0). single-agent mode activated.")
+            logging.info("User input is rated as a simple task..")
             model = ModelRouter().get_default_model()
             answer = model.generate(task)
             return {"task": task, "answer": answer, "mode": "single"}
         else:
-            logging.info(f"Task complexity ({complexity:.1f}) above threshold (3.0). SEEKER-O1 expanding to multi-agent mode.")
-            logging.info("SEEKER-O1 is expanding to accommodate multiple agents for this complex task.")
+            logging.info(f"Task complexity ({complexity:.1f}) above threshold (3.0). multi-agent mode activated.")
+            logging.info("User input is rated as a complex task..")
             return self._execute_multi_agent(task, **kwargs)
     
     def _execute_multi_agent(self, task: str, **kwargs) -> Dict[str, Any]:
@@ -150,8 +150,8 @@ class HybridAgent(ToolAgent):
         Returns:
             A dictionary containing the aggregated results.
         """
-        logging.info("Seeker-o1 expanding to accommodate multiple agents")
-        logging.info("Task decomposed into subtasks for optimal Seeker-o1 performance")
+        logging.info("Multiple agents activating ...")
+        logging.info("Task reduced into subtasks for performance")
         
         # For simple calculator tasks, use direct execution
         if task.lower().startswith("calculate"):
