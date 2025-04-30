@@ -1,22 +1,13 @@
-# 🔍 Seeker-o1: Strategic Exploration and Knowledge Extraction Research - Omnidirectional v1
+
+<div align="center">
+   <h1>Seeker-o1 </h1>
+</div>
 
 <p align="center">
-  <img src="assets/seeker_o1_logo.png" alt="Seeker-o1 Logo" width="200"/>
+  <img src="https://res.cloudinary.com/diekemzs9/image/upload/v1746009112/extension_icon_1024px_jedbgf.png" alt="Seeker-o1 Logo" width="200"/>
 </p>
 
-<p align="center">
-  <a href="https://github.com/nikmcfly/Seeker-o1/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python version"></a>
-  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
-  <a href="https://github.com/nikmcfly/Seeker-o1/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions welcome"></a>
-  <br>
-  <a href="https://github.com/nikmcfly/Seeker-o1/stargazers"><img src="https://img.shields.io/github/stars/nikmcfly/Seeker-o1.svg?style=social&label=Star" alt="GitHub stars"></a>
-  <a href="https://github.com/nikmcfly/Seeker-o1/network/members"><img src="https://img.shields.io/github/forks/nikmcfly/Seeker-o1.svg?style=social&label=Fork" alt="GitHub forks"></a>
-  <a href="https://github.com/nikmcfly/Seeker-o1/issues"><img src="https://img.shields.io/github/issues/nikmcfly/Seeker-o1.svg" alt="GitHub issues"></a>
-  <a href="https://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
-  <a href="https://seeker-o1.github.io/docs"><img src="https://img.shields.io/badge/docs-latest-brightgreen.svg" alt="Documentation Status"></a>
-  <a href="https://t.me/seeker_o1"><img src="https://img.shields.io/badge/Telegram-blue?logo=telegram&logoColor=white" alt="Telegram"></a>
-</p>
+
 
 ## Table of Contents
 
