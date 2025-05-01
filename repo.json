@@ -1,6 +1,6 @@
 {
   "name": "Seeker-o1",
-  "description": "multi-agent upgrade of seeker",
+  "description": "Hybrid AI agent with memory and dynamic task planning",
   "private": false,
   "auto_init": false
 } 

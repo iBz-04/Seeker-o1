@@ -1,2 +1,0 @@
-[console_scripts]
-seeker-o1 = seeker_o1.main:main
