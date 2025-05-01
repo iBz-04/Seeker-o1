@@ -71,6 +71,8 @@ Seeker-o1 empowers users to create AI agents that can:
 ## ✨ Features & Capabilities
 
 ### AI Agent Architecture
+![diagram](https://res.cloudinary.com/diekemzs9/image/upload/v1746103940/mermaid-flow-transparent_hyzyp4.svg)
+
 
 - **Single-Agent System**: Process and execute tasks with a single agent
 - **Tool Integration**: Use a variety of tools to accomplish tasks
