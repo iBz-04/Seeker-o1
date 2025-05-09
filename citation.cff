@@ -1,0 +1,10 @@
+cff-version: 1.0.0
+message: "Do you use this project?, if yes,  cite it as shown below."
+authors:
+  - family-names: Rayamah
+    given-names: Ibrahim
+title: Seeker-o1
+version: 0.1.0
+date-released: 2025-04-30
+repository-code: https://github.com/iBz-04/Seeker-o1
+url: https://github.com/iBz-04/Seeker-o1
